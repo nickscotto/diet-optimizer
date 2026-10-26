@@ -109,6 +109,15 @@ avocado) are estimates, and plan weights are USDA raw or cooked weights, so
 the total is an estimate. Foods with no price on file are listed under the
 basket. Prices change; rerun the searches to refresh them.
 
+## Options on the page
+
+- **Low FODMAP.** `fodmap.py` lists the Aldi food types rated low FODMAP, with daily gram caps on the borderline
+  ones. Anything not on the list, including foods you add, is left out. The ratings are from memory of the Monash
+  app, so check them there before using this for a real elimination diet.
+- **Lowest cost.** Adds each food's Aldi price per gram to what the solver minimizes (`COST_PTS_PER_USD` in
+  `planner.py`). Nutrient targets still come first. Foods with no price count as the median price.
+- **Monthly cost.** The basket panel also shows a 30-day basket, in whole packages, assuming one plan every day.
+
 ## Customize (`config.yaml`)
 
 - **profile**: age, height, weight, goal weight, activity, deficit %, optional
@@ -137,6 +146,7 @@ basket. Prices change; rerun the searches to refresh them.
 | `catalog.py` | Built-in food catalog, Aldi filter and shortlist |
 | `build_catalog.py` | Builds `data/catalog.json` and `data/catalog_review.txt` from USDA |
 | `aldi.py` | What Aldi sells (hand list plus checks) |
+| `fodmap.py` | Low-FODMAP food list and daily caps |
 | `basket.py`, `price_add.py` | Grocery basket with prices; adds rows to `data/aldi_prices.json` |
 | `dri.py` | Canadian DRI vitamin and mineral targets |
 | `aminos.py` | Amino acid targets and digestibility |

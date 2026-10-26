@@ -21,11 +21,12 @@ from typing import Literal, Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
 
 import aldi
 import basket
+import fodmap
 import aminos
 import catalog
 import contaminants
@@ -85,6 +86,8 @@ class PlanRequest(BaseModel):
     avoid: list[Literal["dairy", "egg", "fish", "pork", "soy", "gluten", "tree_nut", "peanut"]] = []
     liked: list[Liked] = Field(default=[], max_length=30)
     rotate: list[str] = Field(default=[], max_length=80)   # foods in the previous plan: use different ones this time
+    low_cost: bool = False                                  # prefer the cheapest plan that still meets the targets
+    low_fodmap: bool = False                                # only foods rated low FODMAP, with daily caps
     days: int = Field(default=4, ge=1, le=14)               # how many days the grocery basket covers
 
 
@@ -180,7 +183,8 @@ def index():
 
 @app.get("/config.js")
 def page_config():
-    return FileResponse(HERE / "docs" / "config.js", media_type="text/javascript")
+    # Served by this app, the page talks to this app; only the GitHub Pages copy of config.js names another server.
+    return Response("window.API_BASE = \"\";", media_type="text/javascript")
 
 
 # USDA files these under a different name ("Cereals, oats, ... cooked").
@@ -242,11 +246,18 @@ def build_plan(req):
     excluded = DIET_EXCLUDES[req.diet] | set(req.avoid)
     avoided = [f["name"] for f in liked if excluded & set(f["contains"])]
     liked = [f for f in liked if not excluded & set(f["contains"])]
+    if req.low_fodmap:
+        dropped = [f["name"] for f in liked if not fodmap.allowed(f)]
+        liked = fodmap.apply(liked)
+        if dropped:
+            avoided += dropped
     liked_ids = {f["fdc_id"] for f in liked}
     staple_cfg = {**cfg, "foods": [f for f in cfg["foods"]
                                    if not excluded & set(f.get("contains", [])) and aldi.allowed(f)
                                    and f.get("fdc_id") not in liked_ids]}
     staples_, _ = optimize.load_foods(staple_cfg, staple_cache(), set())
+    if req.low_fodmap:
+        staples_ = fodmap.apply(staples_)
     staples_ = [f for f in staples_ if staple_cache().get(f["name"], {}).get("fdc_id") not in liked_ids]
     liked_names = {f["name"].lower() for f in liked}
     staples_ = [f for f in staples_ if f["name"].lower() not in liked_names]   # "Broccoli" liked replaces the Broccoli staple
@@ -255,19 +266,27 @@ def build_plan(req):
             f["cost"] = f.get("cost", 1.0) + ROTATE_COST
     roles.annotate(liked + staples_, ep)
     core_ids = {v.get("fdc_id") for v in staple_cache().values()}
-    extra = catalog.shortlist(catalog.available(excluded, liked_ids | core_ids, {f["name"] for f in cfg["foods"]} | set(req.rotate), staples_),
-                              targets)
+    pool = catalog.available(excluded, liked_ids | core_ids, {f["name"] for f in cfg["foods"]} | set(req.rotate), staples_)
+    if req.low_fodmap:
+        pool = fodmap.apply(pool)
+    extra = catalog.shortlist(pool, targets)
     foods = liked + staples_ + extra
+    if req.low_cost:
+        fallback = basket.median_per_gram()
+        for f in foods:
+            f["price_per_serving"] = (basket.per_gram(f) or fallback) * f["serving_g"]
     step = cfg.get("settings", {}).get("serving_step", 0.5)
     with _solve_slots:
         alloc, totals, forced = solve_with_liked(foods, liked, targets, step)
         if avoided:
-            forced = [f"{', '.join(avoided)} not used: on your avoid list."] + forced
+            forced = [f"{', '.join(avoided)} not used: on your avoid list." if not req.low_fodmap else f"{', '.join(avoided)} not used: on your avoid list or not rated low FODMAP."] + forced
         if not_aldi:
             forced = [f"{', '.join(not_aldi)} not used: Aldi doesn't sell {'it' if len(not_aldi) == 1 else 'them'}."] + forced
     used = [(f, float(a.sum())) for f, a in zip(foods, alloc) if a.sum() > 0]
     day = meals.build(foods, alloc)
     grocery = basket.build(foods, alloc, req.days)
+    month = basket.build(foods, alloc, 30)
+    grocery["month"] = {"total": month["total"], "per_day": round(month["total"] / 30, 2)}
 
     return {
         "numbers": {"maintenance": info["tdee"], "bmr": info["bmr"], "kcal": info["kcal"],

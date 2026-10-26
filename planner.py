@@ -36,6 +36,7 @@ MAX_PENALTY_MULT = 10     # exceeding a max is 10x worse than missing a min, per
 GOAL_PENALTY_MULT = 3.0   # missing the higher-end goal, per % (must outweigh the over-goal penalty)
 OVER_PENALTY_MULT = 0.4   # going past OVER_FACTOR x goal, per %: aim for the goal, not the upper limit
 OVER_FACTOR = 1.3
+COST_PTS_PER_USD = 12.0   # low-cost mode: each dollar a day of food costs this many points (a dollar is worth about a 12% miss on one nutrient)
 PUSH_PENALTY_MULT = 1.5   # a target with `push`: every % short of the push value costs this much, so it lands as high as it can
 BODY_KEYS = ("energy", "protein", "fat")   # these have their own min/max, no over-goal band
 # Contaminants (mercury, cadmium, lead, arsenic): penalty points per % of the daily limit, past 30% and, in addition, past 60%.
@@ -71,6 +72,8 @@ def _max_servings(f, step):
     if HOT_PEPPER.search(f["name"]):
         return HOT_PEPPER_G / f["serving_g"]
     servings = f.get("max_servings", 3)
+    if f.get("max_g"):
+        servings = min(servings, f["max_g"] / f["serving_g"])
     grams = DAY_GRAM_CAP.get(f["role"])
     if grams:
         servings = min(servings, max(step, (grams / f["serving_g"]) // step * step))
@@ -198,6 +201,10 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
     if not relax:
         integrality[Y:T] = 1       # which foods go in which meals; portions are made whole in the last pass
 
+    for i, f in enumerate(foods):    # low-cost mode: price per serving, set by the caller
+        if f.get("price_per_serving"):
+            for m in range(M):
+                slack_cost[u(i, m)] += COST_PTS_PER_USD * f["price_per_serving"] * step
     food_cost = np.zeros(n_vars)
     for i, f in enumerate(foods):
         tracked = [k for k in f["missing"] if k in targets and k not in CONTAMINANT_KEYS]

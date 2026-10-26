@@ -19,6 +19,19 @@ def prices():
     return json.loads(PATH.read_text(encoding="utf-8")) if PATH.exists() else {}
 
 
+def per_gram(food):
+    """Shelf price per gram of this food's Aldi type, or None when there is no price on file."""
+    row = prices().get(aldi.type_of(food) or food["name"].lower())
+    if not row:
+        return None
+    return row["price"] / (453.6 if row["mode"] == "lb" else row["pack_g"])
+
+
+def median_per_gram():
+    vals = sorted(r["price"] / (453.6 if r["mode"] == "lb" else r["pack_g"]) for r in prices().values())
+    return vals[len(vals) // 2] if vals else 0.0
+
+
 def build(foods, alloc, days):
     """alloc[i] = servings of foods[i] per meal. Returns the basket for `days` days."""
     table, need, rows, unpriced = prices(), {}, [], []
