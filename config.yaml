@@ -1,0 +1,203 @@
+# Diet optimizer config — edit freely, then run:
+#   python fetch_foods.py   (once, or after adding foods)
+#   python optimize.py
+
+# ---------------------------------------------------------------------------
+# YOU — calories, protein and fat are calculated from this.
+# Update weight_lb every couple of weeks as you lose; the plan rescales.
+# ---------------------------------------------------------------------------
+profile:
+  sex: male
+  age: 30
+  height_in: 70
+  weight_lb: 180          # current body weight
+  body_fat_pct:           # optional (DEXA, InBody, calipers). Blank = estimated from waist_in, else the Boer formula
+  waist_in:               # optional; waist_kind: pants (tag size, +1 in) or tape (navel). Relative fat mass, Woolcott 2018
+  waist_kind: pants
+  activity: moderate      # sedentary | light | moderate | very | extreme
+                          # moderate = lifting 3-5x/week + lots of walking
+  deficit_pct: 20         # % below maintenance. 20-25% = steady fat loss while keeping/gaining muscle
+
+# Evidence-based fat-loss + muscle settings (change only if you know why).
+goal:
+  # Per kg of LEAN mass. Sources: Morton 2018 (Br J Sports Med 52:376, PMID 28698222): muscle gain
+  # plateaus ~1.62 g/kg body weight at maintenance or surplus. ISSN 2017 (Jager, JISSN 14:20): 1.4-2.0
+  # g/kg body weight for most exercisers, 2.3-3.1 g/kg lean mass to keep muscle in a deficit
+  # (also Helms 2014, JISSN 11:20). Devries 2018 (J Nutr 148:1760): higher protein did not change
+  # kidney function in healthy adults without kidney disease. The 1.8/2.2/2.5 values are a chosen
+  # middle ground, not taken from one paper.
+  protein_g_per_kg_lean_mass: {min: 1.8, goal: 2.2, max: 2.5}
+  fat_pct_of_calories: {min: 20, max: 35}                        # below ~20% can hurt hormones
+  fiber_g_per_1000_kcal: 14
+
+# Medical limits from your own doctor. These override the evidence-based
+# numbers above while enabled: true. Turn off only with your doctor's OK.
+doctor_limits:
+  enabled: false          # off: protein follows the research ranges above
+  protein_max_g: 130      # example ceiling; set the number your doctor gives you
+
+settings:
+  max_foods: 14           # most different foods allowed in a day (simplicity)
+  serving_step: 0.5       # the command-line plan uses half-serving steps; the web app plans to the gram
+
+# ---------------------------------------------------------------------------
+# VITAMINS & MINERALS. Minimums and upper limits are NOT set here: dri.py has them
+# by sex and age from the Dietary Reference Intakes (US National Academies / Health
+# Canada tables; sources listed at the top of dri.py).
+#   min  = RDA/AI for the person's sex and age (iron x1.8 for vegetarians and vegans).
+#          Falling short is penalized heavily.
+#   max  = Tolerable Upper Intake Level, where one applies to food.
+# What is set here is this project's own choice, written for a man aged 19-30 and
+# scaled to everyone else by their RDA (iron and sodium are not scaled):
+#   goal   = a higher-end target for someone who trains. Penalized lightly.
+#   weight = how much a miss costs relative to other nutrients (default 1).
+#   push   = (iron only) the planner aims as high as this for vegetarian and vegan plans.
+# Sodium: the 2019 DRI gives an AI of 1500 and a chronic-disease-risk level of 2300 mg
+# but no upper limit, so the goal is 2300 and there is no max.
+# ---------------------------------------------------------------------------
+targets:
+  calcium:     {goal: 1200}
+  iron:        {goal: 18, push: 45, weight: 2}
+  magnesium:   {goal: 500}
+  phosphorus:  {goal: 1000}
+  potassium:   {goal: 4700}
+  sodium:      {goal: 2300, weight: 3}   # weighted up for sweat (training + Florida heat)
+  zinc:        {goal: 15}
+  copper:      {goal: 1.5}
+  manganese:   {goal: 4}
+  selenium:    {goal: 100}
+  vit_a:       {goal: 1500}
+  vit_c:       {goal: 200}
+  vit_d:       {goal: 25}   # hard from food: needs fatty fish, UV mushrooms or fortified foods
+  vit_e:       {goal: 20}
+  vit_k:       {goal: 200}
+  thiamin:     {goal: 1.8}
+  riboflavin:  {goal: 2.0}
+  niacin:      {goal: 25}
+  pantothenic: {goal: 7}
+  vit_b6:      {goal: 2.0}
+  folate:      {goal: 600}
+  vit_b12:     {goal: 6}
+  choline:     {goal: 650}
+
+# ---------------------------------------------------------------------------
+# FOODS the optimizer may use.
+#   query:        USDA search text (fetch_foods.py prints the match — check it)
+#   fdc_id:       pin an exact USDA food if the search picks the wrong one
+#   serving_g:    grams in one serving;  label: how you'd measure it
+#   max_servings: cap per day;  always: true forces it into every plan
+#   custom: true  → give nutrients per serving yourself (from a product label)
+#   epicure:      ingredient name in the Epicure vocabulary. Its model-repo clusters decide
+#                 breakfast vs lunch/dinner fit; its recipe pairings pick seasonings
+#   contains:     meat | fish | dairy | egg | soy | gluten | tree_nut | peanut (diet filters)
+# ---------------------------------------------------------------------------
+foods:
+  # Amino acids: USDA has no amino acid data for Greek yogurt, whole wheat bread or Cheerios, so data/foods.json
+  # holds an estimate for each: the amino acid mix per g protein of a similar USDA food (see "amino_estimated_from"
+  # in that file: yogurt 170887, wheat flour whole-grain 168893, oats 173904) times the food's own protein.
+  # Proteins
+  - {name: Greek yogurt, fdc_id: 170894, query: "Yogurt, Greek, plain, nonfat", serving_g: 170, label: "6 oz cup", max_servings: 2,
+     epicure: yogurt, contains: [dairy]}
+  - {name: Cottage cheese, query: "Cheese, cottage, lowfat, 1% milkfat", serving_g: 113, label: "1/2 cup", max_servings: 2,
+     epicure: cottage_cheese, contains: [dairy]}
+  - {name: Eggs, query: "Egg, whole, raw, fresh", serving_g: 50, label: "1 large egg", max_servings: 4,
+     epicure: egg, contains: [egg]}
+  - {name: Chicken breast, query: "Chicken, broilers or fryers, breast, meat only, cooked, roasted", serving_g: 85, label: "3 oz cooked", max_servings: 3,
+     epicure: chicken, contains: [meat]}
+  - {name: Lean ground beef, query: "Beef, ground, 93 lean meat 7 fat, patty, cooked, broiled", serving_g: 85, label: "3 oz cooked", max_servings: 2,
+     epicure: beef, contains: [meat]}
+  - {name: Salmon, query: "Fish, salmon, Atlantic, farmed, cooked, dry heat", serving_g: 85, label: "3 oz cooked", max_servings: 2,
+     epicure: salmon, contains: [fish]}
+  - {name: Extra firm tofu, query: "Tofu, extra firm, prepared with nigari", serving_g: 85, label: "3 oz", max_servings: 3,
+     epicure: tofu, contains: [soy]}
+  - {name: Lentils, query: "Lentils, mature seeds, cooked, boiled, without salt", serving_g: 99, label: "1/2 cup cooked", max_servings: 3,
+     epicure: lentil, contains: []}
+  - {name: Black beans, query: "Beans, black, mature seeds, cooked, boiled, without salt", serving_g: 86, label: "1/2 cup cooked", max_servings: 3,
+     epicure: black_bean, contains: []}
+  - {name: Sardines, fdc_id: 175139, query: "Fish, sardine, Atlantic, canned in oil, drained solids with bone", serving_g: 92, label: "1 can (3.75 oz)", max_servings: 1,
+     epicure: sardine, contains: [fish]}
+  - {name: Rainbow trout, fdc_id: 173718, query: "Fish, trout, rainbow, farmed, cooked, dry heat", serving_g: 85, label: "3 oz cooked", max_servings: 2,
+     epicure: trout, contains: [fish]}
+  - {name: Canned tuna, fdc_id: 173709, query: "Fish, tuna, light, canned in water, drained solids", serving_g: 85, label: "3 oz drained", max_servings: 2,
+     epicure: tuna, contains: [fish]}
+  - {name: Edamame, fdc_id: 168411, query: "Edamame, frozen, prepared", serving_g: 78, label: "1/2 cup", max_servings: 3,
+     epicure: edamame, contains: [soy]}
+  - name: Whey protein isolate
+    custom: true          # replace with YOUR tub's label values (per scoop)
+    serving_g: 30
+    label: "1 scoop"
+    max_servings: 2
+    # Amino acids (mg per scoop): the amino acid mix of USDA 171283 (sweet dried whey) per g protein x 25 g.
+    # USDA's whey protein powders have no amino acid data. Replace with your tub's label if it lists them.
+    per_serving: {energy: 110, protein: 25, fat: 0.5, carbs: 1, sodium: 100, calcium: 120, potassium: 150,
+                  his: 458, ile: 1390, leu: 2293, lys: 1991, saa: 955, aaa: 1489, thr: 1580, trp: 396, val: 1348}
+    epicure: whey
+    contains: [dairy]
+
+  # Grains / starches / milk
+  - {name: Oats, query: "Cereals, oats, regular and quick, not fortified, dry", serving_g: 40, label: "1/2 cup dry", max_servings: 3,
+     epicure: oat, contains: []}
+  - {name: Brown rice, query: "Rice, brown, long-grain, cooked", serving_g: 98, label: "1/2 cup cooked", max_servings: 3,
+     epicure: brown_rice, contains: []}
+  - {name: Quinoa, fdc_id: 168917, query: "Quinoa, cooked", serving_g: 92, label: "1/2 cup cooked", max_servings: 3,
+     epicure: quinoa, contains: []}
+  - {name: Whole wheat bread, query: "Bread, whole-wheat, commercially prepared", serving_g: 32, label: "1 slice", max_servings: 4,
+     epicure: bread, contains: [gluten]}
+  - {name: Sweet potato, query: "Sweet potato, cooked, baked in skin, flesh, without salt", serving_g: 114, label: "1 medium", max_servings: 2,
+     epicure: sweet_potato, contains: []}
+  - {name: Soy milk, fdc_id: 172456, query: "Soymilk, original and vanilla, with added calcium, vitamins A and D", serving_g: 243, label: "1 cup", max_servings: 2,
+     epicure: soy_milk, contains: [soy]}
+  - {name: Fortified cereal, fdc_id: 173884, query: "Cereals ready-to-eat, GENERAL MILLS, CHEERIOS", serving_g: 28, label: "1 cup (Cheerios)", max_servings: 3,
+     epicure: cereal, contains: [gluten]}
+  - {name: Milk 2%, fdc_id: 171267, query: "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D", serving_g: 244, label: "1 cup", max_servings: 2,
+     epicure: milk, contains: [dairy]}
+
+  # Vegetables
+  - {name: Spinach, query: "Spinach, raw", serving_g: 30, label: "1 cup raw", max_servings: 4,
+     epicure: spinach, contains: []}
+  - {name: Broccoli, query: "Broccoli, frozen, chopped, cooked, boiled, drained, without salt", serving_g: 92, label: "1/2 cup cooked", max_servings: 4,
+     epicure: broccoli, contains: []}
+  - {name: Baby carrots, query: "Carrots, baby, raw", serving_g: 85, label: "~8 carrots", max_servings: 2,
+     epicure: carrot, contains: []}
+  - {name: Bell pepper, query: "Peppers, sweet, red, raw", serving_g: 119, label: "1 medium", max_servings: 2,
+     epicure: bell_pepper, contains: []}
+  - {name: UV mushrooms, fdc_id: 170143, query: "Mushrooms, portabella, exposed to ultraviolet light, raw", serving_g: 84, label: "1 portobello cap", max_servings: 3,
+     epicure: portobello_mushroom, contains: []}
+  - {name: Kale, fdc_id: 168421, query: "Kale, raw", serving_g: 21, label: "1 cup raw", max_servings: 4,
+     epicure: kale, contains: []}
+  - {name: Sauerkraut, query: "Sauerkraut, canned, solids and liquids", serving_g: 15, label: "1 spoonful", max_servings: 2,
+     epicure: sauerkraut, contains: []}
+  # Fruit
+  - {name: Orange juice (calcium + D), fdc_id: 169101, query: "Orange juice, chilled, with added calcium and vitamin D", serving_g: 249, label: "1 cup", max_servings: 1,
+     epicure: fruit_juice, contains: []}
+  - {name: Banana, query: "Bananas, raw", serving_g: 118, label: "1 medium", max_servings: 2,
+     epicure: banana, contains: []}
+  - {name: Blueberries, query: "Blueberries, raw", serving_g: 74, label: "1/2 cup", max_servings: 2,
+     epicure: blueberry, contains: []}
+  - {name: Orange, query: "Oranges, raw, all commercial varieties", serving_g: 131, label: "1 medium", max_servings: 2,
+     epicure: orange, contains: []}
+  - {name: Apple, fdc_id: 171688, query: "Apples, raw, with skin", serving_g: 182, label: "1 medium", max_servings: 2,
+     epicure: apple, contains: []}
+  - {name: Avocado, query: "Avocados, raw, California", serving_g: 50, label: "1/3 avocado", max_servings: 2,
+     epicure: avocado, contains: []}
+  # Nuts / seeds / fats
+  - {name: Almonds, query: "Nuts, almonds", serving_g: 28, label: "1 oz (~23)", max_servings: 1,
+     epicure: almond, contains: [tree_nut]}
+  - {name: Walnuts, query: "Nuts, walnuts, english", serving_g: 28, label: "1 oz (~14 halves)", max_servings: 1,
+     epicure: walnut, contains: [tree_nut]}
+  - {name: Peanut butter, query: "Peanut butter, smooth style, without salt", serving_g: 16, label: "1 tbsp", max_servings: 2,
+     epicure: peanut_butter, contains: [peanut]}
+  - {name: Pumpkin seeds, query: "Seeds, pumpkin and squash seed kernels, dried", serving_g: 28, label: "1 oz", max_servings: 1,
+     epicure: pumpkin_seed, contains: []}
+  - {name: Olive oil, query: "Oil, olive, salad or cooking", serving_g: 13.5, label: "1 tbsp", max_servings: 2,
+     epicure: olive_oil, contains: []}
+  # Seasoning — the USDA foods above are mostly unsalted, so this is how the
+  # solver reaches your sodium range. Iodized salt also covers iodine.
+  - name: Iodized salt
+    custom: true
+    serving_g: 1.5
+    label: "1/4 tsp"
+    max_servings: 3
+    per_serving: {sodium: 575}
+    epicure: salt
+    seasoning: true       # spread across meals instead of grouped into one

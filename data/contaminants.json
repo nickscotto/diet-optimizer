@@ -1,0 +1,1844 @@
+{
+"Milk, whole, fluid": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Milk, reduced fat, fluid": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.006,
+"hg": 0.0
+},
+"Milk, chocolate, reduced fat, fluid": {
+"as": 0.031,
+"cd": 0.26,
+"pb": 0.1,
+"hg": 0.0
+},
+"Milk, skim, fluid": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cheese, American, processed": {
+"as": 0.82,
+"cd": 0.28,
+"pb": 0.21,
+"hg": 0.0
+},
+"Cheese, cheddar (sharp/mild)": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beef, ground, pan-cooked": {
+"as": 0.41,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Ham, cured (not canned), baked": {
+"as": 0.097,
+"cd": 0.098,
+"pb": 0.23,
+"hg": 0.0
+},
+"Pork chop, pan-cooked with oil": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pork sausage (link/patty), pan-cooked": {
+"as": 0.0,
+"cd": 0.009,
+"pb": 0.1,
+"hg": 0.0
+},
+"Pork bacon, oven-cooked": {
+"as": 0.061,
+"cd": 0.16,
+"pb": 0.063,
+"hg": 0.0
+},
+"Lamb chop, pan-cooked with oil": {
+"as": 0.0,
+"cd": 0.004,
+"pb": 0.016,
+"hg": 0.0
+},
+"Turkey breast, oven-roasted": {
+"as": 0.22,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Frankfurter (all beef/beef and pork), boiled": {
+"as": 0.033,
+"cd": 0.29,
+"pb": 0.17,
+"hg": 0.0
+},
+"Luncheon meat, bologna": {
+"as": 0.0,
+"cd": 0.24,
+"pb": 0.0,
+"hg": 0.0
+},
+"Fish sticks or patty, frozen, oven-cooked": {
+"as": 75.7,
+"cd": 1.2,
+"pb": 0.14,
+"hg": 0.71
+},
+"Eggs, hard-boiled": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pork and beans, canned": {
+"as": 0.0,
+"cd": 0.31,
+"pb": 0.0,
+"hg": 0.0
+},
+"Lima beans, immature, frozen, boiled": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Peas, green, frozen, boiled": {
+"as": 0.0,
+"cd": 0.16,
+"pb": 0.0,
+"hg": 0.0
+},
+"Peanut butter, creamy": {
+"as": 0.8,
+"cd": 5.2,
+"pb": 0.56,
+"hg": 0.0
+},
+"Peanuts, dry roasted, salted": {
+"as": 0.33,
+"cd": 4.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Rice, white, enriched, cooked": {
+"as": 4.5,
+"cd": 0.65,
+"pb": 0.0,
+"hg": 0.005
+},
+"Oatmeal, plain, quick, cooked": {
+"as": 0.17,
+"cd": 0.22,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cream of wheat (farina), enriched, cooked": {
+"as": 0.16,
+"cd": 0.47,
+"pb": 0.0,
+"hg": 0.0
+},
+"Corn/hominy grits, enriched, cooked": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Corn, frozen, boiled": {
+"as": 0.0,
+"cd": 0.25,
+"pb": 0.0,
+"hg": 0.0
+},
+"Corn, canned, drained solids": {
+"as": 0.29,
+"cd": 0.11,
+"pb": 0.0,
+"hg": 0.0
+},
+"Bread, white, enriched, pre-sliced": {
+"as": 0.51,
+"cd": 2.7,
+"pb": 0.23,
+"hg": 0.0
+},
+"Cornbread, homemade": {
+"as": 0.32,
+"cd": 1.0,
+"pb": 0.64,
+"hg": 0.33
+},
+"Bread, whole wheat, pre-sliced": {
+"as": 1.0,
+"cd": 3.0,
+"pb": 0.39,
+"hg": 0.0
+},
+"Tortilla, flour": {
+"as": 0.46,
+"cd": 2.6,
+"pb": 0.1,
+"hg": 0.013
+},
+"Muffin, blueberry": {
+"as": 0.18,
+"cd": 0.88,
+"pb": 0.019,
+"hg": 0.0
+},
+"Crackers, saltine": {
+"as": 0.35,
+"cd": 2.8,
+"pb": 0.14,
+"hg": 0.0
+},
+"Chips, tortilla": {
+"as": 0.1,
+"cd": 0.2,
+"pb": 0.0,
+"hg": 0.0
+},
+"Noodles, egg, enriched, boiled": {
+"as": 0.0,
+"cd": 2.2,
+"pb": 0.36,
+"hg": 0.0
+},
+"Cereal, corn flakes": {
+"as": 0.0,
+"cd": 0.13,
+"pb": 0.15,
+"hg": 0.0
+},
+"Cereal, bran with raisins": {
+"as": 1.8,
+"cd": 3.8,
+"pb": 0.71,
+"hg": 0.0
+},
+"Cereal, crisped rice": {
+"as": 17.0,
+"cd": 2.2,
+"pb": 0.15,
+"hg": 0.24
+},
+"Cereal, oat ring": {
+"as": 2.9,
+"cd": 2.0,
+"pb": 0.36,
+"hg": 0.0
+},
+"Apple, red, with peel, raw": {
+"as": 0.19,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Orange, raw": {
+"as": 0.037,
+"cd": 0.004,
+"pb": 0.0,
+"hg": 0.0
+},
+"Banana, raw": {
+"as": 0.012,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Watermelon, raw/frozen": {
+"as": 0.11,
+"cd": 0.057,
+"pb": 0.0,
+"hg": 0.0
+},
+"Peach, raw/frozen": {
+"as": 0.36,
+"cd": 0.064,
+"pb": 0.0,
+"hg": 0.0
+},
+"Applesauce, bottled": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pear, with peel, raw": {
+"as": 0.39,
+"cd": 0.08,
+"pb": 0.0,
+"hg": 0.0
+},
+"Strawberry, raw/frozen": {
+"as": 0.28,
+"cd": 0.93,
+"pb": 0.0,
+"hg": 0.0
+},
+"Fruit cocktail, canned in light syrup, solids and liquids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.35,
+"hg": 0.0
+},
+"Grapes, seedless, red/green, raw": {
+"as": 0.31,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cantaloupe, raw/frozen": {
+"as": 0.9,
+"cd": 0.87,
+"pb": 0.0,
+"hg": 0.0
+},
+"Grapefruit, raw": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Raisins": {
+"as": 2.3,
+"cd": 0.033,
+"pb": 0.97,
+"hg": 0.13
+},
+"Avocado, raw": {
+"as": 0.56,
+"cd": 0.94,
+"pb": 0.044,
+"hg": 0.013
+},
+"Juice, apple, bottled": {
+"as": 0.26,
+"cd": 0.0,
+"pb": 0.14,
+"hg": 0.0
+},
+"Juice, grapefruit, bottled/cartoned": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Collards, fresh/frozen, boiled": {
+"as": 0.14,
+"cd": 2.7,
+"pb": 0.11,
+"hg": 0.039
+},
+"Lettuce, iceberg, raw": {
+"as": 0.0,
+"cd": 3.4,
+"pb": 0.0,
+"hg": 0.0
+},
+"Broccoli, fresh/frozen, boiled": {
+"as": 0.0,
+"cd": 1.6,
+"pb": 0.0,
+"hg": 0.0
+},
+"Celery, raw": {
+"as": 0.076,
+"cd": 3.8,
+"pb": 0.0,
+"hg": 0.0
+},
+"Asparagus, fresh/frozen, boiled": {
+"as": 0.27,
+"cd": 1.7,
+"pb": 0.032,
+"hg": 0.0
+},
+"Cauliflower, fresh/frozen, boiled": {
+"as": 0.0,
+"cd": 1.2,
+"pb": 0.0,
+"hg": 0.0
+},
+"Tomato, raw": {
+"as": 0.0,
+"cd": 0.35,
+"pb": 0.0,
+"hg": 0.0
+},
+"Green beans, fresh/frozen, boiled": {
+"as": 0.024,
+"cd": 0.071,
+"pb": 0.015,
+"hg": 0.0
+},
+"Green beans, canned, drained solids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cucumber, peeled, raw": {
+"as": 1.3,
+"cd": 0.13,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pepper, bell, green, raw": {
+"as": 0.0,
+"cd": 0.89,
+"pb": 0.0,
+"hg": 0.0
+},
+"Squash, winter, fresh/frozen, boiled": {
+"as": 0.2,
+"cd": 0.21,
+"pb": 0.0,
+"hg": 0.0
+},
+"Onion, mature, raw": {
+"as": 0.39,
+"cd": 0.76,
+"pb": 0.027,
+"hg": 0.0
+},
+"Mushrooms, canned, drained solids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Potato, peeled, boiled": {
+"as": 0.032,
+"cd": 2.5,
+"pb": 0.0,
+"hg": 0.0
+},
+"Potato, with peel, baked": {
+"as": 0.43,
+"cd": 4.3,
+"pb": 0.23,
+"hg": 0.0
+},
+"Chips, potato": {
+"as": 0.13,
+"cd": 13.0,
+"pb": 0.21,
+"hg": 0.0
+},
+"Chili con carne with beans, canned": {
+"as": 0.39,
+"cd": 0.63,
+"pb": 0.22,
+"hg": 0.0
+},
+"Macaroni and cheese, prepared from boxed mix": {
+"as": 0.0,
+"cd": 1.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Chicken potpie, frozen, heated": {
+"as": 0.0,
+"cd": 0.66,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, chicken noodle, canned, condensed, prepared with water": {
+"as": 0.0,
+"cd": 0.26,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, tomato, canned, condensed, prepared with water": {
+"as": 0.0,
+"cd": 0.85,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pickles, dill, cucumber": {
+"as": 0.0,
+"cd": 0.11,
+"pb": 0.46,
+"hg": 0.0
+},
+"Margarine, salted": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Butter, salted": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Mayonnaise": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cream, half and half": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cream substitute, non-dairy, liquid": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sugar, white, granulated": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Syrup, pancake": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Honey": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Ketchup, tomato": {
+"as": 0.0,
+"cd": 2.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cake, chocolate with chocolate icing": {
+"as": 0.36,
+"cd": 1.8,
+"pb": 0.89,
+"hg": 0.045
+},
+"Cookies, chocolate chip": {
+"as": 0.34,
+"cd": 4.8,
+"pb": 0.76,
+"hg": 0.057
+},
+"Cookies, sandwich, with crème filling": {
+"as": 0.56,
+"cd": 1.8,
+"pb": 1.3,
+"hg": 0.053
+},
+"Pie, apple, fresh/frozen": {
+"as": 0.0,
+"cd": 1.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pie, pumpkin, fresh/frozen": {
+"as": 0.1,
+"cd": 0.77,
+"pb": 0.53,
+"hg": 0.0
+},
+"Candy bar, milk chocolate, plain": {
+"as": 0.21,
+"cd": 2.0,
+"pb": 0.79,
+"hg": 0.057
+},
+"Gelatin dessert, strawberry": {
+"as": 0.14,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Carbonated beverage, cola, regular": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Fruit drink, from powder": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Carbonated beverage, cola, diet": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Tea, brewed from tea bag": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beer": {
+"as": 0.21,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Alcohol, distilled, whiskey/scotch": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, beef and broth/gravy": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, vegetables and beef": {
+"as": 1.0,
+"cd": 0.39,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, vegetables and chicken": {
+"as": 0.97,
+"cd": 0.22,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, chicken noodle dinner": {
+"as": 0.75,
+"cd": 1.3,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, pasta, tomato and beef": {
+"as": 0.0,
+"cd": 1.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, turkey and rice": {
+"as": 0.57,
+"cd": 0.39,
+"pb": 0.87,
+"hg": 0.0
+},
+"BF, carrots": {
+"as": 0.05,
+"cd": 2.0,
+"pb": 0.73,
+"hg": 0.0
+},
+"BF, green beans": {
+"as": 0.0,
+"cd": 0.17,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, mixed vegetables": {
+"as": 0.039,
+"cd": 1.6,
+"pb": 0.47,
+"hg": 0.0
+},
+"BF, sweet potatoes": {
+"as": 0.14,
+"cd": 0.42,
+"pb": 2.1,
+"hg": 0.0
+},
+"BF, peas": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, applesauce": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, peaches": {
+"as": 0.48,
+"cd": 0.25,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, pears": {
+"as": 0.29,
+"cd": 0.16,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, juice, apple": {
+"as": 0.35,
+"cd": 0.0,
+"pb": 0.12,
+"hg": 0.0
+},
+"Yogurt, lowfat, fruit-flavored": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cheese, Swiss": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cream cheese": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Luncheon meat, ham": {
+"as": 0.4,
+"cd": 0.32,
+"pb": 0.0,
+"hg": 0.0
+},
+"Chicken breast, oven-roasted, skin removed": {
+"as": 0.11,
+"cd": 0.037,
+"pb": 0.027,
+"hg": 0.0
+},
+"Chicken nuggets, fast-food": {
+"as": 0.056,
+"cd": 0.57,
+"pb": 0.016,
+"hg": 0.0
+},
+"Shrimp, pre-cooked, shells removed, no tails": {
+"as": 35.8,
+"cd": 0.57,
+"pb": 0.49,
+"hg": 0.72
+},
+"Bagel, plain, toasted": {
+"as": 0.71,
+"cd": 2.4,
+"pb": 0.1,
+"hg": 0.0
+},
+"English muffin, plain, toasted": {
+"as": 0.51,
+"cd": 2.9,
+"pb": 0.079,
+"hg": 0.004
+},
+"Crackers, graham": {
+"as": 0.0,
+"cd": 4.3,
+"pb": 0.25,
+"hg": 0.0
+},
+"Crackers, butter-type": {
+"as": 0.76,
+"cd": 3.6,
+"pb": 0.24,
+"hg": 0.0
+},
+"Juice, pineapple, canned": {
+"as": 0.037,
+"cd": 0.0,
+"pb": 0.58,
+"hg": 0.0
+},
+"Juice, grape, bottled": {
+"as": 0.7,
+"cd": 0.15,
+"pb": 0.5,
+"hg": 0.0
+},
+"Potatoes, French fries, fast-food": {
+"as": 0.4,
+"cd": 5.8,
+"pb": 0.056,
+"hg": 0.0
+},
+"Brussels sprouts, fresh/frozen, boiled": {
+"as": 0.11,
+"cd": 1.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Mushrooms, raw": {
+"as": 1.5,
+"cd": 0.33,
+"pb": 0.0,
+"hg": 0.18
+},
+"Eggplant, fresh, peeled, boiled": {
+"as": 0.27,
+"cd": 1.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Mixed vegetables, frozen, boiled": {
+"as": 0.0,
+"cd": 0.51,
+"pb": 0.0,
+"hg": 0.0
+},
+"Ice cream, vanilla": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Popsicle, fruit-flavored": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.21,
+"hg": 0.0
+},
+"Doughnut, cake-type, plain": {
+"as": 0.33,
+"cd": 1.1,
+"pb": 0.14,
+"hg": 0.0
+},
+"Brownie": {
+"as": 0.23,
+"cd": 2.1,
+"pb": 0.67,
+"hg": 0.0
+},
+"Cookies, sugar": {
+"as": 0.0,
+"cd": 1.6,
+"pb": 0.0,
+"hg": 0.0
+},
+"Candy, hard": {
+"as": 1.3,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pretzels, hard, salted": {
+"as": 0.37,
+"cd": 3.6,
+"pb": 0.14,
+"hg": 0.0
+},
+"Syrup, chocolate-flavored": {
+"as": 0.41,
+"cd": 1.3,
+"pb": 0.92,
+"hg": 0.057
+},
+"Jelly, grape": {
+"as": 1.3,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Mustard, yellow, plain": {
+"as": 0.0,
+"cd": 3.5,
+"pb": 0.58,
+"hg": 0.0
+},
+"Olives, black, pitted": {
+"as": 0.1,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sour cream": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Coffee, brewed from ground": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Fruit drink (5% - 25% juice), canned or bottled": {
+"as": 0.037,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, bananas": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, teething biscuits": {
+"as": 2.4,
+"cd": 2.2,
+"pb": 1.8,
+"hg": 0.0
+},
+"Salmon, steaks/fillets, baked": {
+"as": 37.6,
+"cd": 0.16,
+"pb": 0.0,
+"hg": 2.1
+},
+"BF, squash": {
+"as": 0.0,
+"cd": 0.11,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, cereal, oatmeal, dry, prepared with water": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, cereal, rice, dry, prepared with water": {
+"as": 2.3,
+"cd": 0.2,
+"pb": 0.0,
+"hg": 0.015
+},
+"BF, turkey and broth/gravy": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cottage cheese, creamed, reduced fat": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beef steak, loin/sirloin, oven-roasted": {
+"as": 0.56,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Chicken breast, fried with skin, fast-food": {
+"as": 0.061,
+"cd": 0.38,
+"pb": 0.029,
+"hg": 0.0
+},
+"Chicken thigh, oven-roasted, skin removed": {
+"as": 0.051,
+"cd": 0.021,
+"pb": 0.0,
+"hg": 0.0
+},
+"Chicken leg, fried with skin, fast-food": {
+"as": 0.024,
+"cd": 0.42,
+"pb": 0.016,
+"hg": 0.0
+},
+"Catfish, pan-cooked with oil": {
+"as": 2.5,
+"cd": 0.018,
+"pb": 0.0,
+"hg": 0.85
+},
+"Tuna, canned in water, drained": {
+"as": 120.0,
+"cd": 2.5,
+"pb": 0.0,
+"hg": 23.0
+},
+"Beans, refried, canned": {
+"as": 0.0,
+"cd": 0.19,
+"pb": 0.0,
+"hg": 0.08
+},
+"Seeds, sunflower, shelled, salted, roasted": {
+"as": 0.22,
+"cd": 33.3,
+"pb": 0.0,
+"hg": 0.043
+},
+"Pancakes, frozen, heated": {
+"as": 0.14,
+"cd": 1.3,
+"pb": 0.0,
+"hg": 0.0
+},
+"Breakfast tart/toaster pastry": {
+"as": 0.0,
+"cd": 1.3,
+"pb": 0.0,
+"hg": 0.0
+},
+"Spaghetti, enriched, boiled": {
+"as": 0.0,
+"cd": 2.8,
+"pb": 0.0,
+"hg": 0.0
+},
+"Fruit juice blend (100% juice), canned/bottled": {
+"as": 0.09,
+"cd": 0.0,
+"pb": 0.04,
+"hg": 0.0
+},
+"Juice, cranberry cocktail, bottled": {
+"as": 0.0,
+"cd": 0.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Juice, orange, bottled/cartoned": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Carrot, baby, raw": {
+"as": 0.5,
+"cd": 2.5,
+"pb": 0.0,
+"hg": 0.0
+},
+"Lettuce, leaf, raw": {
+"as": 0.17,
+"cd": 6.1,
+"pb": 0.19,
+"hg": 0.0
+},
+"Salsa, tomato, bottled": {
+"as": 0.0,
+"cd": 2.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, ramen noodles, prepared with water": {
+"as": 0.0,
+"cd": 0.84,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cake, white with white icing": {
+"as": 0.17,
+"cd": 0.41,
+"pb": 0.26,
+"hg": 0.0
+},
+"Candy bar, chocolate, nougat, with nuts": {
+"as": 0.36,
+"cd": 1.6,
+"pb": 0.0,
+"hg": 0.0
+},
+"Popcorn, microwave, butter-flavored": {
+"as": 0.0,
+"cd": 0.6,
+"pb": 0.22,
+"hg": 0.0
+},
+"Brown gravy, canned or bottled": {
+"as": 0.0,
+"cd": 0.07,
+"pb": 0.0,
+"hg": 0.0
+},
+"Salad dressing, Italian, regular": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.19,
+"hg": 0.0
+},
+"Oil, olive": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Oil, vegetable": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Water, bottled, mineral/spring": {
+"as": 0.047,
+"cd": 0.001,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sorbet, fruit-flavored": {
+"as": 0.1,
+"cd": 0.28,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cinnamon roll, iced": {
+"as": 0.53,
+"cd": 1.4,
+"pb": 0.38,
+"hg": 0.0
+},
+"Cod, baked": {
+"as": 491.5,
+"cd": 0.22,
+"pb": 0.0,
+"hg": 8.3
+},
+"Tilapia, baked": {
+"as": 11.7,
+"cd": 0.006,
+"pb": 0.0,
+"hg": 0.67
+},
+"Salami, dry/hard": {
+"as": 0.0,
+"cd": 0.054,
+"pb": 0.018,
+"hg": 0.0
+},
+"Turkey, ground, pan-cooked": {
+"as": 0.55,
+"cd": 0.085,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cheese, Monterey jack": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cheese, mozzarella": {
+"as": 0.0,
+"cd": 0.023,
+"pb": 0.0,
+"hg": 0.0
+},
+"Ice cream, chocolate": {
+"as": 0.049,
+"cd": 0.73,
+"pb": 0.4,
+"hg": 0.045
+},
+"Milk shake, vanilla, fast-food": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.064,
+"hg": 0.0
+},
+"Pineapple, raw/frozen": {
+"as": 0.016,
+"cd": 0.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sweet potato, baked, peel removed": {
+"as": 0.42,
+"cd": 0.57,
+"pb": 1.2,
+"hg": 0.0
+},
+"Blueberries, raw": {
+"as": 0.48,
+"cd": 0.012,
+"pb": 0.071,
+"hg": 0.0
+},
+"Biscuits, fast-food": {
+"as": 0.69,
+"cd": 1.9,
+"pb": 0.042,
+"hg": 0.004
+},
+"Tortilla, corn": {
+"as": 0.18,
+"cd": 0.15,
+"pb": 0.0,
+"hg": 0.0
+},
+"Bread, white roll/bun (hamburger/hotdog)": {
+"as": 0.57,
+"cd": 2.5,
+"pb": 0.091,
+"hg": 0.0
+},
+"Rice, brown, cooked": {
+"as": 6.4,
+"cd": 0.8,
+"pb": 0.0,
+"hg": 0.036
+},
+"Walnuts, shelled": {
+"as": 0.58,
+"cd": 0.009,
+"pb": 0.025,
+"hg": 0.0
+},
+"Pizza, cheese, fast-food": {
+"as": 0.37,
+"cd": 2.1,
+"pb": 0.032,
+"hg": 0.0
+},
+"Sauce, barbecue": {
+"as": 0.5,
+"cd": 1.3,
+"pb": 1.0,
+"hg": 0.0
+},
+"Cabbage, raw": {
+"as": 0.038,
+"cd": 0.55,
+"pb": 0.0,
+"hg": 0.0
+},
+"Zucchini, fresh/frozen, boiled": {
+"as": 0.038,
+"cd": 0.71,
+"pb": 0.069,
+"hg": 0.0
+},
+"Spinach, raw": {
+"as": 0.59,
+"cd": 22.2,
+"pb": 0.64,
+"hg": 0.011
+},
+"Yogurt, frozen, vanilla": {
+"as": 0.013,
+"cd": 0.0,
+"pb": 0.015,
+"hg": 0.0
+},
+"Eggplant, baked with peel": {
+"as": 0.94,
+"cd": 1.2,
+"pb": 0.0,
+"hg": 0.0
+},
+"Kale, fresh, pan-cooked": {
+"as": 0.69,
+"cd": 3.0,
+"pb": 0.18,
+"hg": 0.08
+},
+"Mango, fresh/frozen": {
+"as": 0.24,
+"cd": 0.25,
+"pb": 0.0,
+"hg": 0.0
+},
+"Garlic, raw": {
+"as": 0.87,
+"cd": 2.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cashews, salted": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Alcohol, distilled, vodka": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.14,
+"hg": 0.0
+},
+"Wine, red": {
+"as": 0.55,
+"cd": 0.0,
+"pb": 0.53,
+"hg": 0.0
+},
+"Wine, white": {
+"as": 1.1,
+"cd": 0.0,
+"pb": 1.3,
+"hg": 0.0
+},
+"Beverage, almond (non-dairy)": {
+"as": 0.27,
+"cd": 0.097,
+"pb": 0.13,
+"hg": 0.0
+},
+"Beverage, coconut water": {
+"as": 0.037,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beverage, energy": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beverage, soy (non-dairy)": {
+"as": 0.24,
+"cd": 0.28,
+"pb": 0.07,
+"hg": 0.0
+},
+"Beverage, sports": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Carbonated beverage, lemon-lime, regular": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Meal replacement, liquid RTD, vanilla": {
+"as": 0.0,
+"cd": 0.12,
+"pb": 0.0,
+"hg": 0.0
+},
+"Powder, protein": {
+"as": 0.41,
+"cd": 1.4,
+"pb": 0.67,
+"hg": 0.0
+},
+"Candies, fruit snacks": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cereal, granola": {
+"as": 1.6,
+"cd": 1.6,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cereal, oat ring, honey": {
+"as": 2.1,
+"cd": 1.3,
+"pb": 0.64,
+"hg": 0.0
+},
+"Cereal, shredded wheat, frosted": {
+"as": 0.11,
+"cd": 4.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cereal, whole wheat, cooked": {
+"as": 0.0,
+"cd": 0.31,
+"pb": 0.21,
+"hg": 0.0
+},
+"Salad dressing, ranch, low-calorie": {
+"as": 0.88,
+"cd": 0.13,
+"pb": 1.3,
+"hg": 0.0
+},
+"Salad dressing, ranch, regular": {
+"as": 0.12,
+"cd": 0.37,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sauce, soy": {
+"as": 0.0,
+"cd": 1.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sauce, tomato, canned": {
+"as": 0.31,
+"cd": 2.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"Sauce, tomato, pasta": {
+"as": 0.0,
+"cd": 2.4,
+"pb": 0.0,
+"hg": 0.0
+},
+"Yogurt, lowfat, vanilla": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Quinoa, cooked": {
+"as": 0.33,
+"cd": 1.1,
+"pb": 0.37,
+"hg": 0.0
+},
+"Granola bar": {
+"as": 2.2,
+"cd": 0.85,
+"pb": 0.0,
+"hg": 0.0
+},
+"Juice, lemon": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Juice, tomato-vegetable": {
+"as": 0.043,
+"cd": 1.1,
+"pb": 0.053,
+"hg": 0.0
+},
+"Almonds, shelled": {
+"as": 0.87,
+"cd": 1.5,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beans, black, canned, drained solids": {
+"as": 0.0,
+"cd": 0.55,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beans, kidney, canned, drained solids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beans, pinto, canned, drained solids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Beans, white, canned, drained solids": {
+"as": 0.0,
+"cd": 0.2,
+"pb": 0.0,
+"hg": 0.0
+},
+"Crackers, cheese": {
+"as": 0.31,
+"cd": 2.2,
+"pb": 0.48,
+"hg": 0.0
+},
+"Broth, chicken, cartoned": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, broccoli cheese, canned, condensed, prepared with water": {
+"as": 0.0,
+"cd": 0.083,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, clam chowder, New England, canned, ready to serve": {
+"as": 16.0,
+"cd": 1.9,
+"pb": 0.17,
+"hg": 0.0
+},
+"Soup, cream of mushroom, canned, condensed, prepared with water": {
+"as": 0.0,
+"cd": 0.033,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, cream of potato, canned, condensed, prepared with water": {
+"as": 0.0,
+"cd": 0.43,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, vegetable beef, canned, ready to serve": {
+"as": 0.0,
+"cd": 1.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Soup, vegetable, canned, ready to serve": {
+"as": 0.0,
+"cd": 0.6,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pasta, rice noodles, cooked": {
+"as": 1.7,
+"cd": 0.67,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pasta, whole wheat, cooked": {
+"as": 0.0,
+"cd": 3.8,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pie crust": {
+"as": 0.0,
+"cd": 0.86,
+"pb": 0.0,
+"hg": 0.0
+},
+"Pudding, ready-to-eat, chocolate": {
+"as": 0.11,
+"cd": 0.49,
+"pb": 0.14,
+"hg": 0.0
+},
+"Luncheon meat, turkey": {
+"as": 0.78,
+"cd": 0.39,
+"pb": 0.14,
+"hg": 0.0
+},
+"Veggie burger": {
+"as": 0.54,
+"cd": 1.7,
+"pb": 0.35,
+"hg": 0.0
+},
+"Beans, garbanzo (chickpeas), canned, drained solids": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Lentils, dry, cooked": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Tofu, firm, plain, drained": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, cereal, mixed, dry, prepared with water": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, juice, pear": {
+"as": 0.29,
+"cd": 0.088,
+"pb": 0.059,
+"hg": 0.0
+},
+"BF, juice, grape": {
+"as": 0.92,
+"cd": 0.0,
+"pb": 0.44,
+"hg": 0.0
+},
+"BF, fruit yogurt dessert": {
+"as": 0.0,
+"cd": 0.02,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, vegetables and turkey": {
+"as": 0.75,
+"cd": 0.86,
+"pb": 0.58,
+"hg": 0.0
+},
+"BF, apples with berries": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, apples with fruit other than berries": {
+"as": 0.054,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, macaroni and cheese with vegetables": {
+"as": 0.51,
+"cd": 0.47,
+"pb": 0.68,
+"hg": 0.0
+},
+"BF, finger foods, puffed snack": {
+"as": 4.2,
+"cd": 1.5,
+"pb": 0.36,
+"hg": 0.013
+},
+"BF, infant formula, milk-based, powdered, prepared with water": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, infant formula, soy-based, powdered, prepared with water": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, prunes": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, ravioli, cheese-filled, with tomato sauce": {
+"as": 0.0,
+"cd": 2.4,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, water, baby, bottled": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, mango, glass jar": {
+"as": 0.53,
+"cd": 0.28,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, mango, pouch": {
+"as": 0.36,
+"cd": 0.48,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, banana, blackberry & blueberry, plastic jar": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, banana & strawberry, glass jar": {
+"as": 0.0,
+"cd": 0.044,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, banana & blueberry, pouch": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, banana, apple & pear, plastic jar": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, organic pears & spinach, pouch": {
+"as": 0.48,
+"cd": 1.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, peas & spinach, glass jar": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, sweet potato, apple & spinach, pouch": {
+"as": 0.55,
+"cd": 0.9,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, pear, blueberry, apple & avocado, pouch": {
+"as": 0.34,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, peas, green beans & avocado, pouch": {
+"as": 0.32,
+"cd": 0.098,
+"pb": 0.086,
+"hg": 0.0
+},
+"BF, apple, spinach & avocado, bowl/pouch": {
+"as": 0.33,
+"cd": 3.2,
+"pb": 0.11,
+"hg": 0.0
+},
+"BF, organic yogurt, apple, pumpkin, cinnamon & quinoa, pouch": {
+"as": 0.21,
+"cd": 0.18,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, turkey, quinoa, apple & sweet potato, pouch": {
+"as": 0.0,
+"cd": 0.4,
+"pb": 0.086,
+"hg": 0.0
+},
+"BF, apple & sweet potato with cinnamon, pouch": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, apple, sweet potato & pineapple, pouch": {
+"as": 0.27,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, sweet potato, apple & corn, pouch": {
+"as": 0.36,
+"cd": 0.1,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, pumpkin, banana, papaya & cardamom, bowl": {
+"as": 0.0,
+"cd": 0.21,
+"pb": 0.0,
+"hg": 0.06
+},
+"BF, mango, carrot & turmeric, bowl": {
+"as": 0.26,
+"cd": 0.35,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, pear, mango, avocado, pouch": {
+"as": 0.79,
+"cd": 0.57,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, mango, yellow zucchini, corn & turmeric, pouch": {
+"as": 0.0,
+"cd": 0.32,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, juice, mixed fruit": {
+"as": 0.17,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, yogurt, peach pear": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, cereal, oatmeal, dry": {
+"as": 2.8,
+"cd": 1.2,
+"pb": 0.0,
+"hg": 0.0
+},
+"BF, cereal, rice, dry": {
+"as": 10.9,
+"cd": 1.1,
+"pb": 0.21,
+"hg": 0.2
+},
+"BF, cereal, mixed, dry": {
+"as": 3.2,
+"cd": 2.9,
+"pb": 0.6,
+"hg": 0.0
+},
+"BF, infant formula, milk-based, powdered": {
+"as": 0.18,
+"cd": 0.15,
+"pb": 0.5,
+"hg": 0.0
+},
+"BF, infant formula, soy-based, powdered": {
+"as": 0.57,
+"cd": 0.62,
+"pb": 0.0,
+"hg": 0.0
+},
+"Flour, white, all-purpose": {
+"as": 0.35,
+"cd": 4.2,
+"pb": 0.16,
+"hg": 0.0
+},
+"Baking powder": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Breadcrumbs": {
+"as": 0.78,
+"cd": 3.3,
+"pb": 0.49,
+"hg": 0.0
+},
+"Salt, sea": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Salt, iodized": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+},
+"Cocoa powder": {
+"as": 0.0,
+"cd": 0.0,
+"pb": 0.0,
+"hg": 0.0
+}
+}

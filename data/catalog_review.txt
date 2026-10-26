@@ -1,0 +1,433 @@
+
+== beef ==
+Beef, brisket, flat half (cooked)                            meat                   174768  Beef, brisket, flat half, separable lean only, trimmed to 1/8" fat, se
+Beef, brisket, flat half (raw)                               meat                   168658  Beef, brisket, flat half, boneless, separable lean only, trimmed to 0"
+Beef, chuck, mock tender steak (cooked)                      meat                   170805  Beef, chuck, mock tender steak, boneless, separable lean only, trimmed
+Beef, grass-fed, strip steaks (raw)                          meat                   169429  Beef, grass-fed, strip steaks, lean only, raw
+Beef, ground (raw)                                           meat                   173111  Beef, ground, 97% lean meat / 3% fat, raw
+Beef, ground, patty (cooked)                                 meat                   173113  Beef, ground, 97% lean meat /3% fat, patty, cooked, pan-broiled
+Beef, loin, top sirloin filet (cooked)                       meat                   173050  Beef, loin, top sirloin filet, boneless, separable lean only, trimmed 
+Beef, loin, top sirloin petite roast/filet (raw)             meat                   174695  Beef, loin, top sirloin petite roast/filet, boneless, separable lean o
+Beef, ribeye  petite roast/filet, boneless (raw)             meat                   174698  Beef, ribeye  petite roast/filet, boneless, separable lean only, trimm
+Beef, round, eye of round steak (cooked)                     meat                   174008  Beef, round, eye of round steak, boneless, separable lean only, trimme
+Beef, round, top round roast (cooked)                        meat                   171771  Beef, round, top round roast, boneless, separable lean only, trimmed t
+Beef, shoulder pot roast or steak, boneless (raw)            meat                   169482  Beef, shoulder pot roast or steak, boneless, separable lean only, trim
+Beef, shoulder steak, boneless (cooked)                      meat                   168732  Beef, shoulder steak, boneless, separable lean only, trimmed to 0" fat
+Beef, top sirloin, steak (cooked)                            meat                   168636  Beef, top sirloin, steak, separable lean only, trimmed to 0" fat, sele
+
+== dairy ==
+Brick Cheese                                                 dairy                  172176  Cheese, brick
+Brie Cheese                                                  dairy                  172177  Cheese, brie
+Camembert Cheese                                             dairy                  172178  Cheese, camembert
+Cheddar Cheese                                               dairy                  173414  Cheese, cheddar (Includes foods for USDA's Food Distribution Program)
+Cheddar Cheese, reduced fat                                  dairy                  171292  Cheese, cheddar, reduced fat (Includes foods for USDA's Food Distribut
+Cheese food, cold pack, American                             dairy                  170856  Cheese food, cold pack, American
+Colby Cheese                                                 dairy                  173416  Cheese, colby
+Cottage Cheese, lowfat, 1% milkfat                           dairy                  168114  Cheese, cottage, lowfat, 1% milkfat, no sodium added
+Cottage Cheese, lowfat, 2% milkfat                           dairy                  172182  Cheese, cottage, lowfat, 2% milkfat
+Cream Cheese, low fat                                        dairy                  169079  Cheese, cream, low fat
+Edam Cheese                                                  dairy                  173419  Cheese, edam
+Egg, white                                                   egg                    172183  Egg, white, raw, fresh
+Egg, white, pasteurized                                      egg                    172203  Egg, white, raw, frozen, pasteurized
+Egg, whole                                                   egg                    171287  Egg, whole, raw, fresh
+Egg, whole, pasteurized                                      egg                    172202  Egg, whole, raw, frozen, pasteurized (Includes foods for USDA's Food D
+Fontina Cheese                                               dairy                  170843  Cheese, fontina
+Gjetost Cheese                                               dairy                  171240  Cheese, gjetost
+Goat Cheese, hard type                                       dairy                  172197  Cheese, goat, hard type
+Goat Cheese, soft type                                       dairy                  173435  Cheese, goat, soft type
+Goat Milk, fluid                                             dairy                  171278  Milk, goat, fluid, with added vitamin D
+Gouda Cheese                                                 dairy                  171241  Cheese, gouda
+Gruyere Cheese                                               dairy                  171242  Cheese, gruyere
+Indian buffalo Milk, fluid                                   dairy                  171280  Milk, indian buffalo, fluid
+Kefir, lowfat, plain                                         dairy                  170904  Kefir, lowfat, plain, LIFEWAY
+Limburger Cheese                                             dairy                  171243  Cheese, limburger
+Mozzarella Cheese, low moisture, part-skim                   dairy                  170900  Cheese, mozzarella, low moisture, part-skim, shredded
+Mozzarella Cheese, low moisture, part-skim 2                 dairy                  171244  Cheese, mozzarella, low moisture, part-skim
+Muenster Cheese                                              dairy                  171245  Cheese, muenster
+Muenster Cheese, low fat                                     dairy                  169050  Cheese, muenster, low fat
+Nonfat Milk, fluid                                           dairy                  171269  Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or s
+Nonfat Milk, fluid, vitamin A and vitamin D                  dairy                  171270  Milk, nonfat, fluid, with added nonfat milk solids, vitamin A and vita
+Parmesan Cheese                                              dairy                  167705  Cheese, parmesan, low sodium
+Plain Yogurt, low fat                                        dairy                  170886  Yogurt, plain, low fat
+Plain Yogurt, skim milk                                      dairy                  170887  Yogurt, plain, skim milk
+Provolone Cheese                                             dairy                  170850  Cheese, provolone
+Provolone Cheese, reduced fat                                dairy                  172215  Cheese, provolone, reduced fat
+Ricotta Cheese, part skim milk                               dairy                  171248  Cheese, ricotta, part skim milk
+Ricotta Cheese, whole milk                                   dairy                  170851  Cheese, ricotta, whole milk
+Swiss Cheese                                                 dairy                  168124  Cheese, swiss, low sodium
+Swiss Cheese, low fat                                        dairy                  168141  Cheese, swiss, low fat
+
+== fat ==
+Canola Oil                                                   -                      172336  Oil, canola
+Corn Oil, peanut, and olive                                  peanut                 167737  Oil, corn, peanut, and olive
+Corn and canola Oil                                          -                      169867  Oil, corn and canola
+Flaxseed Oil, contains added sliced flaxseed                 -                      171442  Oil, flaxseed, contains added sliced flaxseed
+Olive Oil, salad or cooking                                  -                      171413  Oil, olive, salad or cooking
+Vegetable Oil, Natreon canola, high stability                -                      171033  Oil, vegetable, Natreon canola, high stability, non trans, high oleic 
+
+== fish ==
+Anchovy, european (raw)                                      fish                   174182  Fish, anchovy, european, raw
+Catfish, channel, farmed (cooked)                            fish                   175166  Fish, catfish, channel, farmed, cooked, dry heat
+Catfish, channel, wild (cooked)                              fish                   173714  Fish, catfish, channel, wild, cooked, dry heat
+Clam, mixed species                                          fish                   171976  Mollusks, clam, mixed species, canned, drained solids
+Cod, Atlantic (cooked)                                       fish                   171956  Fish, cod, Atlantic, cooked, dry heat
+Cod, Pacific (cooked)                                        fish                   175178  Fish, cod, Pacific, cooked
+Crab, blue (raw)                                             fish                   174204  Crustaceans, crab, blue, raw
+Crab, dungeness (cooked)                                     fish                   172007  Crustaceans, crab, dungeness, cooked, moist heat
+Haddock (cooked)                                             fish                   174198  Fish, haddock, cooked, dry heat
+Halibut, Atlantic and Pacific (cooked)                       fish                   174201  Fish, halibut, Atlantic and Pacific, cooked, dry heat
+Halibut, greenland (cooked)                                  fish                   174232  Fish, halibut, greenland, cooked, dry heat
+Herring, Atlantic (cooked)                                   fish                   175117  Fish, herring, Atlantic, cooked, dry heat
+Herring, Pacific (cooked)                                    fish                   174233  Fish, herring, Pacific, cooked, dry heat
+Lingcod (cooked)                                             fish                   174235  Fish, lingcod, cooked, dry heat
+Mackerel, jack                                               fish                   175121  Fish, mackerel, jack, canned, drained solids
+Mackerel, king (cooked)                                      fish                   174236  Fish, mackerel, king, cooked, dry heat
+Milkfish (cooked)                                            fish                   171995  Fish, milkfish, cooked, dry heat
+Mussel, blue (cooked)                                        fish                   174217  Mollusks, mussel, blue, cooked, moist heat
+Oyster, eastern                                              fish                   171981  Mollusks, oyster, eastern, canned
+Oyster, eastern, wild (cooked)                               fish                   175171  Mollusks, oyster, eastern, wild, cooked, dry heat
+Pollock, Alaska (cooked)                                     fish                   173726  Fish, pollock, Alaska, cooked
+Pollock, Atlantic (cooked)                                   fish                   174237  Fish, pollock, Atlantic, cooked, dry heat
+Roughy, orange (cooked)                                      fish                   174251  Fish, roughy, orange, cooked, dry heat
+Salmon, pink, without skin and bones                         fish                   173724  Fish, Salmon, pink, canned, drained solids, without skin and bones
+Salmon, sockeye (cooked)                                     fish                   173692  Fish, salmon, sockeye, cooked, dry heat
+Shrimp (cooked)                                              fish                   175180  Crustaceans, shrimp, cooked
+Snapper, mixed species (cooked)                              fish                   173699  Fish, snapper, mixed species, cooked, dry heat
+Spiny lobster, mixed species (cooked)                        fish                   172009  Crustaceans, spiny lobster, mixed species, cooked, moist heat
+Squid, mixed species (raw)                                   fish                   174223  Mollusks, squid, mixed species, raw
+Sunfish, pumpkin seed (cooked)                               fish                   172003  Fish, sunfish, pumpkin seed, cooked, dry heat
+Swordfish (cooked)                                           fish                   173704  Fish, swordfish, cooked, dry heat
+Tilapia (cooked)                                             fish                   175177  Fish, tilapia, cooked, dry heat
+Trout, brook, New York State (raw)                           fish                   175181  Fish, trout, brook, raw, New York State
+Trout, rainbow, farmed (cooked)                              fish                   173718  Fish, trout, rainbow, farmed, cooked, dry heat
+Tuna, light, canned in oil                                   fish                   173708  Fish, tuna, light, canned in oil, drained solids
+Tuna, light, canned in water                                 fish                   173709  Fish, tuna, light, canned in water, drained solids (Includes foods for
+Tuna, white, canned in oil                                   fish                   175157  Fish, tuna, white, canned in oil, drained solids
+Tuna, yellowfin (cooked)                                     fish                   172006  Fish, tuna, yellowfin, fresh, cooked, dry heat
+
+== fruit ==
+Acerola                                                      -                      171686  Acerola, (west indian cherry), raw
+Apricots                                                     -                      171697  Apricots, raw
+Avocados                                                     -                      171707  Avocados, raw, Florida
+Bananas                                                      -                      173944  Bananas, raw
+Blackberries                                                 -                      173946  Blackberries, raw
+Blueberries                                                  -                      171711  Blueberries, raw
+Blueberries, wild                                            -                      173949  Blueberries, wild, frozen (Includes foods for USDA's Food Distribution
+Cherries, sour, red                                          -                      173954  Cherries, sour, red, raw
+Cherries, sweet                                              -                      171719  Cherries, sweet, raw
+Clementines                                                  -                      168195  Clementines, raw
+Cranberries                                                  -                      171722  Cranberries, raw
+Custard-apple                                                -                      171725  Custard-apple, (bullock's-heart), raw
+Dates, deglet noor                                           -                      171726  Dates, deglet noor
+Dates, medjool                                               -                      168191  Dates, medjool
+Elderberries                                                 -                      171727  Elderberries, raw
+Figs                                                         -                      173021  Figs, raw
+Grapefruit                                                   -                      173033  Grapefruit, raw, pink and red and white, all areas
+Grapefruit, white                                            -                      174677  Grapefruit, raw, white, California
+Grapes, american type                                        -                      174682  Grapes, american type (slip skin), raw
+Grapes, muscadine                                            -                      173040  Grapes, muscadine, raw
+Grapes, red or green                                         -                      174683  Grapes, red or green (European type, such as Thompson seedless), raw
+Guavas, common                                               -                      173044  Guavas, common, raw
+Guavas, strawberry                                           -                      173045  Guavas, strawberry, raw
+Horned melon                                                 -                      167791  Horned melon (Kiwano)
+Java-plum                                                    -                      168150  Java-plum, (jambolan), raw
+Kiwifruit, ZESPRI SunGold                                    -                      168211  Kiwifruit, ZESPRI SunGold, raw
+Kiwifruit, green                                             -                      168153  Kiwifruit, green, raw
+Limes                                                        -                      168155  Limes, raw
+Loganberries                                                 -                      169088  Loganberries, frozen
+Mammy-apple                                                  -                      169909  Mammy-apple, (mamey), raw
+Mangos                                                       -                      169910  Mangos, raw
+Melon balls                                                  -                      169912  Melon balls, frozen
+Melons, cantaloupe                                           -                      169092  Melons, cantaloupe, raw
+Melons, casaba                                               -                      169093  Melons, casaba, raw
+Mulberries                                                   -                      169913  Mulberries, raw
+Oranges                                                      -                      169916  Oranges, raw, California, valencias
+Oranges, navels                                              -                      169917  Oranges, raw, navels (Includes foods for USDA's Food Distribution Prog
+Papayas                                                      -                      169926  Papayas, raw
+Peaches, yellow                                              -                      169928  Peaches, yellow, raw
+Pears                                                        -                      169118  Pears, raw
+Pears, asian                                                 -                      168177  Pears, asian, raw
+Pears, bartlett                                              -                      167776  Pears, raw, bartlett (Includes foods for USDA's Food Distribution Prog
+Pears, green anjou                                           -                      167779  Pears, raw, green anjou (Includes foods for USDA's Food Distribution P
+Pears, red anjou                                             -                      167777  Pears, raw, red anjou
+Persimmons, japanese                                         -                      169941  Persimmons, japanese, raw
+Pineapple, all varieties                                     -                      169124  Pineapple, raw, all varieties
+Pineapple, extra sweet variety                               -                      168194  Pineapple, raw, extra sweet variety
+Pineapple, traditional varieties                             -                      168193  Pineapple, raw, traditional varieties
+Plums                                                        -                      169949  Plums, raw
+Pomegranates                                                 -                      169134  Pomegranates, raw
+Prickly pears                                                -                      167750  Prickly pears, raw
+Raisins, dark, seedless                                      -                      168165  Raisins, dark, seedless (Includes foods for USDA's Food Distribution P
+Raisins, golden, seedless                                    -                      168164  Raisins, golden, seedless
+Raisins, seeded                                              -                      168166  Raisins, seeded
+Raspberries                                                  -                      167755  Raspberries, raw
+Rose-apples                                                  -                      168171  Rose-apples, raw
+Strawberries                                                 -                      167762  Strawberries, raw
+Sugar-apples                                                 -                      168175  Sugar-apples, (sweetsop), raw
+Tangerines                                                   -                      169105  Tangerines, (mandarin oranges), raw
+Watermelon                                                   -                      167765  Watermelon, raw
+
+== game ==
+Bison (cooked)                                               meat                   173852  Game meat, bison, separable lean only, cooked, roasted
+Bison, ground, grass-fed (cooked)                            meat                   173847  Bison, ground, grass-fed, cooked
+Bison, shoulder clod (raw)                                   meat                   172566  Game meat, bison, shoulder clod, separable lean only, trimmed to 0" fa
+Goat (cooked)                                                meat                   175304  Game meat, goat, cooked, roasted
+Lamb, Australian, leg (cooked)                               meat                   174886  Lamb, Australian, imported, fresh, leg, hindshank, heel on, bone-in, s
+Lamb, Australian, rib chop/rack roast (raw)                  meat                   174416  Lamb, Australian, imported, fresh, rib chop/rack roast, frenched, bone
+Lamb, Australian, tenderloin (cooked)                        meat                   174888  Lamb, Australian, imported, fresh, tenderloin, boneless, separable lea
+Veal, foreshank, osso buco (cooked)                          meat                   172646  Veal, foreshank, osso buco, separable lean only, cooked, braised
+Veal, leg, top round (cooked)                                meat                   174880  Veal, leg, top round, cap off, cutlet, boneless, cooked, grilled
+Veal, loin, chop (cooked)                                    meat                   172644  Veal, loin, chop, separable lean only, cooked, grilled
+
+== grain ==
+Amaranth grain (cooked)                                      -                      170683  Amaranth grain, cooked
+Barley, pearled (cooked)                                     gluten                 170285  Barley, pearled, cooked
+Buckwheat groats (cooked)                                    -                      170686  Buckwheat groats, roasted, cooked
+Bulgur (cooked)                                              gluten                 170287  Bulgur, cooked
+Couscous (cooked)                                            gluten                 169700  Couscous, cooked
+Macaroni, vegetable (cooked)                                 gluten                 168904  Macaroni, vegetable, enriched, cooked
+Millet (cooked)                                              -                      168871  Millet, cooked
+Noodles, egg (cooked)                                        egg,gluten             169732  Noodles, egg, enriched, cooked
+Noodles, egg, spinach (cooked)                               egg,gluten             169734  Noodles, egg, spinach, enriched, cooked
+Noodles, japanese, soba (cooked)                             gluten                 168907  Noodles, japanese, soba, cooked
+Noodles, japanese, somen (cooked)                            gluten                 168909  Noodles, japanese, somen, cooked
+Oats, regular and quick                                      -                      173904  Cereals, oats, regular and quick, not fortified, dry
+Pasta, whole grain, 51% whole wheat (cooked)                 gluten                 172024  Pasta, whole grain, 51% whole wheat, remaining enriched semolina, cook
+Pasta, whole-wheat (cooked)                                  gluten                 168910  Pasta, whole-wheat, cooked (Includes foods for USDA's Food Distributio
+Quinoa (cooked)                                              -                      168874  Quinoa, uncooked
+Rice noodles (cooked)                                        -                      168914  Rice noodles, cooked
+Rice, brown, long-grain (cooked)                             -                      169704  Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distri
+Rice, brown, parboiled (cooked)                              -                      168876  Rice, brown, parboiled, dry, UNCLE BEN'S
+Rice, white, glutinous (cooked)                              -                      169711  Rice, white, glutinous, unenriched, cooked
+Rice, white, long-grain (cooked)                             -                      169708  Rice, white, long-grain, parboiled, enriched, cooked
+Rice, white, long-grain (cooked) 2                           -                      168878  Rice, white, long-grain, regular, enriched, cooked
+Spaghetti, protein-fortified (cooked)                        gluten                 168934  Spaghetti, protein-fortified, cooked, enriched (n x 6.25)
+Spaghetti, spinach (cooked)                                  gluten                 168912  Spaghetti, spinach, cooked
+Spelt (cooked)                                               gluten                 169746  Spelt, cooked
+Teff (cooked)                                                -                      168918  Teff, cooked
+Wild rice (cooked)                                           -                      168897  Wild rice, cooked
+
+== legume ==
+Black Beans, mature seeds (cooked)                           -                      173735  Beans, black, mature seeds, cooked, boiled, without salt
+Chickpeas, mature seeds (cooked)                             -                      173757  Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled,
+Chickpeas, mature seeds, rinsed in tap water                 -                      173801  Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained
+Cranberry Beans, mature seeds (cooked)                       -                      173736  Beans, cranberry (roman), mature seeds, cooked, boiled, without salt
+Hummus, commercial                                           -                      174289  Hummus, commercial
+Hummus, home prepared                                        -                      172454  Hummus, home prepared
+Lentils                                                      -                      172420  Lentils, raw
+Lentils, mature seeds (cooked)                               -                      172421  Lentils, mature seeds, cooked, boiled, without salt
+Lima beans, large, mature seeds (cooked)                     -                      174253  Lima beans, large, mature seeds, cooked, boiled, without salt
+Lima beans, thin seeded, mature seeds (cooked)               -                      172422  Lima beans, thin seeded (baby), mature seeds, cooked, boiled, without 
+Natto                                                        soy                    172443  Natto
+Navy Beans, mature seeds (cooked)                            -                      173746  Beans, navy, mature seeds, cooked, boiled, without salt
+Peanut butter with omega-3, creamy                           peanut                 172471  Peanut butter with omega-3, creamy
+Peanut butter, chunky, vitamin and mineral fortified         peanut                 172460  Peanut butter, chunky, vitamin and mineral fortified
+Peanut butter, smooth, vitamin and mineral fortified         peanut                 172459  Peanut butter, smooth, vitamin and mineral fortified
+Peanuts, all types                                           peanut                 172430  Peanuts, all types, raw
+Peanuts, all types, oil-roasted (cooked)                     peanut                 175258  Peanuts, all types, oil-roasted, without salt
+Peanuts, virginia                                            peanut                 172434  Peanuts, virginia, raw
+Peanuts, virginia, oil-roasted (cooked)                      peanut                 173809  Peanuts, virginia, oil-roasted, without salt
+Peas, green, split                                           -                      172428  Peas, green, split, mature seeds, raw
+Peas, split, mature seeds (cooked)                           -                      172429  Peas, split, mature seeds, cooked, boiled, without salt
+Pigeon peas, mature seeds (cooked)                           -                      172437  Pigeon peas (red gram), mature seeds, cooked, boiled, without salt
+Pink Beans, mature seeds (cooked)                            -                      175198  Beans, pink, mature seeds, cooked, boiled, without salt
+Pinto Beans                                                  -                      174286  Beans, pinto, canned, drained solids
+Pinto Beans, mature seeds (cooked)                           -                      175200  Beans, pinto, mature seeds, cooked, boiled, without salt
+SILK Mocha, soymilk                                          soy                    173777  SILK Mocha, soymilk
+SILK Plus for Bone Health, soymilk                           soy                    175221  SILK Plus for Bone Health, soymilk
+Small white Beans, mature seeds (cooked)                     -                      173750  Beans, small white, mature seeds, cooked, boiled, without salt
+Soybeans, mature cooked                                      soy                    174271  Soybeans, mature cooked, boiled, without salt
+Soybeans, mature seeds                                       soy                    174270  Soybeans, mature seeds, raw
+Soymilk, enhanced                                            soy                    173765  Soymilk (All flavors), enhanced
+Soymilk, nonfat, vitamins A and D                            soy                    175216  Soymilk (all flavors), nonfat, with added calcium, vitamins A and D
+Soymilk, original and vanilla, light                         soy                    173766  Soymilk, original and vanilla, light, with added calcium, vitamins A a
+Soymilk, original and vanilla, vitamins A and D              soy                    172456  Soymilk, original and vanilla, with added calcium, vitamins A and D
+Tempeh (cooked)                                              soy                    172467  Tempeh, cooked
+Tofu yogurt                                                  soy                    167722  Tofu yogurt
+Tofu, extra firm, prepared with nigari                       soy                    174290  Tofu, extra firm, prepared with nigari
+Tofu, soft, prepared with calcium sulfate and magnesium chlo soy                    172449  Tofu, soft, prepared with calcium sulfate and magnesium chloride (niga
+White Beans, mature seeds (cooked)                           -                      175203  Beans, white, mature seeds, cooked, boiled, without salt
+Yellow Beans, mature seeds (cooked)                          -                      173752  Beans, yellow, mature seeds, cooked, boiled, without salt
+
+== nut ==
+Almond butter, plain, without salt added                     tree_nut               168588  Nuts, almond butter, plain, without salt added
+Almonds                                                      tree_nut               170567  Nuts, almonds
+Almonds, blanched                                            tree_nut               170568  Nuts, almonds, blanched
+Cashew butter, plain, without salt added                     tree_nut               170163  Nuts, cashew butter, plain, without salt added
+Cashew nuts                                                  tree_nut               170162  Nuts, cashew nuts, raw
+Coconut milk                                                 -                      170172  Nuts, coconut milk, raw (liquid expressed from grated meat and water)
+Flaxseed                                                     -                      169414  Seeds, flaxseed
+Hazelnuts or filberts                                        tree_nut               170581  Nuts, hazelnuts or filberts
+Hazelnuts or filberts, blanched                              tree_nut               170582  Nuts, hazelnuts or filberts, blanched
+Hemp seed, hulled                                            -                      170148  Seeds, hemp seed, hulled
+Macadamia nuts                                               tree_nut               170178  Nuts, macadamia nuts, raw
+Pecans                                                       tree_nut               170182  Nuts, pecans
+Pistachio nuts                                               tree_nut               170184  Nuts, pistachio nuts, raw
+Pumpkin and squash seed kernels                              -                      170557  Seeds, pumpkin and squash seed kernels, roasted, without salt
+Pumpkin and squash seeds, whole                              -                      170188  Seeds, pumpkin and squash seeds, whole, roasted, without salt
+Sesame butter, paste                                         -                      170191  Seeds, sesame butter, paste
+Sesame seeds, whole, roasted and toasted                     -                      170151  Seeds, sesame seeds, whole, roasted and toasted
+Sunflower seed butter                                        -                      170155  Seeds, sunflower seed butter, without salt
+Sunflower seed kernels, toasted                              -                      170154  Seeds, sunflower seed kernels, toasted, without salt
+Walnuts, english                                             tree_nut               170187  Nuts, walnuts, english
+
+== pork ==
+Pork, Leg Cap Steak, boneless (raw)                          meat                   169186  Pork, Leg Cap Steak, boneless, separable lean and fat, raw
+Pork, Leg sirloin tip roast, boneless (cooked)               meat                   168370  Pork, Leg sirloin tip roast, boneless, separable lean and fat, cooked,
+Pork, Shoulder breast, boneless (cooked)                     meat                   169188  Pork, Shoulder breast, boneless, separable lean and fat, cooked, broil
+Pork, Shoulder petite tender, boneless (raw)                 meat                   168369  Pork, Shoulder petite tender, boneless, separable lean and fat, raw
+Pork, enhanced, loin (raw)                                   meat                   168361  Pork, fresh, enhanced, loin, tenderloin, separable lean only, raw
+Pork, ground, 96% lean / 4% fat (cooked)                     meat                   168375  Pork, ground, 96% lean / 4% fat, cooked, pan-broiled
+Pork, ground, 96% lean / 4% fat (cooked) 2                   meat                   169193  Pork, ground, 96% lean / 4% fat, cooked, crumbles
+Pork, leg, rump half (cooked)                                meat                   167817  Pork, fresh, leg (ham), rump half, separable lean only, cooked, roaste
+Pork, leg, shank half (cooked)                               meat                   168229  Pork, fresh, leg (ham), shank half, separable lean only, cooked, roast
+Pork, loin, center loin (cooked)                             meat                   168285  Pork, fresh, loin, center loin (chops), boneless, separable lean only,
+Pork, loin, tenderloin (cooked)                              meat                   169180  Pork, fresh, loin, tenderloin, separable lean only, with added solutio
+Pork, shoulder, petite tender (cooked)                       meat                   169189  Pork, shoulder, petite tender, boneless, separable lean and fat, cooke
+
+== poultry ==
+Chicken, broiler or fryers, breast (cooked)                  meat                   171140  Chicken, broiler or fryers, breast, skinless, boneless, meat only, coo
+Chicken, broilers or fryers, breast (raw)                    meat                   171509  Chicken, broilers or fryers, breast, skinless, boneless, meat only, wi
+Chicken, broilers or fryers, rotisserie (cooked)             meat                   171518  Chicken, broilers or fryers, rotisserie, original seasoning, breast, m
+Chicken, no broth                                            meat                   171110  Chicken, canned, no broth
+Chicken, with broth                                          meat                   171099  Chicken, canned, meat only, with broth
+Turkey, drumstick, from whole bird (cooked)                  meat                   171530  Turkey, drumstick, from whole bird, meat only, roasted
+Turkey, retail parts, breast (cooked)                        meat                   174516  Turkey, retail parts, breast, meat only, cooked, roasted
+Turkey, wing, from whole bird (cooked)                       meat                   171527  Turkey, wing, from whole bird, meat only, with added solution, roasted
+
+== veg ==
+Artichokes (cooked)                                          -                      168388  Artichokes, (globe or french), frozen, cooked, boiled, drained, withou
+Arugula                                                      -                      169387  Arugula, raw
+Asparagus (cooked)                                           -                      169209  Asparagus, frozen, cooked, boiled, drained, without salt
+Beets (cooked)                                               -                      169146  Beets, cooked, boiled, drained
+Broadbeans, immature seeds                                   -                      170377  Broadbeans, immature seeds, raw
+Broccoli (cooked)                                            -                      169967  Broccoli, cooked, boiled, drained, without salt
+Broccoli raab (cooked)                                       -                      170382  Broccoli raab, cooked
+Broccoli, chinese (cooked)                                   -                      169392  Broccoli, chinese, cooked
+Broccoli, chopped (cooked)                                   -                      169969  Broccoli, frozen, chopped, cooked, boiled, drained, without salt
+Broccoli, leaves                                             -                      169329  Broccoli, leaves, raw
+Broccoli, spears (cooked)                                    -                      170380  Broccoli, frozen, spears, cooked, boiled, drained, without salt
+Broccoli, stalks                                             -                      169331  Broccoli, stalks, raw
+Brussels sprouts (cooked)                                    -                      169973  Brussels sprouts, frozen, cooked, boiled, drained, without salt
+Cabbage                                                      -                      169975  Cabbage, raw
+Cabbage, chinese                                             -                      169979  Cabbage, chinese (pe-tsai), raw
+Cabbage, common, freshly harvest                             -                      169335  Cabbage, common (danish, domestic, and pointed types), freshly harvest
+Cabbage, common, stored                                      -                      169336  Cabbage, common (danish, domestic, and pointed types), stored, raw
+Cabbage, napa (cooked)                                       -                      168572  Cabbage, napa, cooked
+Cabbage, red                                                 -                      169977  Cabbage, red, raw
+Cabbage, savoy                                               -                      170388  Cabbage, savoy, raw
+Carrots                                                      -                      170393  Carrots, raw
+Carrots, baby                                                -                      168568  Carrots, baby, raw
+Cauliflower (cooked)                                         -                      170399  Cauliflower, frozen, cooked, boiled, drained, without salt
+Cauliflower, green                                           -                      169389  Cauliflower, green, raw
+Corn, sweet, white (cooked)                                  -                      168539  Corn, sweet, white, cooked, boiled, drained, without salt
+Corn, sweet, white (cooked) 2                                -                      169366  Corn, sweet, white, frozen, kernels on cob, cooked, boiled, drained, w
+Corn, sweet, white (cooked) 3                                -                      168545  Corn, sweet, white, frozen, kernels cut off cob, boiled, drained, with
+Corn, sweet, yellow (cooked)                                 -                      169999  Corn, sweet, yellow, cooked, boiled, drained, without salt
+Corn, sweet, yellow (cooked) 2                               -                      168399  Corn, sweet, yellow, frozen, kernels cut off cob, boiled, drained, wit
+Corn, sweet, yellow (cooked) 3                               -                      168401  Corn, sweet, yellow, frozen, kernels on cob, cooked, boiled, drained, 
+Cornsalad                                                    -                      169219  Cornsalad, raw
+Cowpeas, immature seeds                                      -                      169220  Cowpeas (blackeyes), immature seeds, raw
+Cowpeas, leafy tips                                          -                      169224  Cowpeas, leafy tips, raw
+Cucumber, peeled                                             -                      169225  Cucumber, peeled, raw
+Edamame                                                      soy                    168410  Edamame, frozen, unprepared
+Eggplant (cooked)                                            -                      169229  Eggplant, cooked, boiled, drained, without salt
+Fava Beans, in pod                                           -                      168574  Beans, fava, in pod, raw
+Fennel, bulb                                                 -                      169385  Fennel, bulb, raw
+Garlic                                                       -                      169230  Garlic, raw
+Hungarian Peppers                                            -                      168578  Peppers, hungarian, raw
+Jalapeno Peppers                                             -                      168576  Peppers, jalapeno, raw
+Jerusalem-artichokes                                         -                      169236  Jerusalem-artichokes, raw
+Kale                                                         -                      168421  Kale, raw
+Kohlrabi                                                     -                      168424  Kohlrabi, raw
+Lambsquarters                                                -                      169244  Lambsquarters, raw
+Leeks                                                        -                      169246  Leeks, (bulb and lower leaf-portion), raw
+Lentils, sprouted                                            -                      168427  Lentils, sprouted, raw
+Lettuce, butterhead                                          -                      168429  Lettuce, butterhead (includes boston and bibb types), raw
+Lettuce, cos or romaine                                      -                      169247  Lettuce, cos or romaine, raw
+Lettuce, green leaf                                          -                      169249  Lettuce, green leaf, raw
+Lettuce, iceberg                                             -                      169248  Lettuce, iceberg (includes crisphead types), raw
+Lettuce, red leaf                                            -                      168431  Lettuce, red leaf, raw
+Lima beans, immature seeds                                   -                      168396  Lima beans, immature seeds, raw
+Lima beans, immature seeds, baby (cooked)                    -                      169956  Lima beans, immature seeds, frozen, baby, cooked, boiled, drained, wit
+Lima beans, immature seeds, fordhook                         -                      169953  Lima beans, immature seeds, frozen, fordhook, unprepared
+Mushroom, white, exposed to ultraviolet light                -                      169376  Mushroom, white, exposed to ultraviolet light, raw
+Mushrooms, Chanterelle                                       -                      168422  Mushrooms, Chanterelle, raw
+Mushrooms, brown, italian                                    -                      168557  Mushrooms, brown, italian, or crimini, exposed to ultraviolet light, r
+Mushrooms, brown, italian 2                                  -                      168434  Mushrooms, brown, italian, or crimini, raw
+Mushrooms, enoki                                             -                      169382  Mushrooms, enoki, raw
+Mushrooms, maitake                                           -                      169403  Mushrooms, maitake, raw
+Mushrooms, morel                                             -                      168423  Mushrooms, morel, raw
+Mushrooms, oyster                                            -                      168580  Mushrooms, oyster, raw
+Mushrooms, portabella                                        -                      169255  Mushrooms, portabella, raw
+Mushrooms, portabella, exposed to ultraviolet light          -                      170143  Mushrooms, portabella, exposed to ultraviolet light, raw
+Mushrooms, shiitake                                          -                      169242  Mushrooms, shiitake, raw
+Mushrooms, white                                             -                      169251  Mushrooms, white, raw
+Mustard spinach                                              -                      168438  Mustard spinach, (tendergreen), raw
+Navy Beans, mature seeds, sprouted                           -                      169139  Beans, navy, mature seeds, sprouted, raw
+Okra                                                         -                      169260  Okra, raw
+Onions, spring or scallions                                  -                      170005  Onions, spring or scallions (includes tops and bulb), raw
+Onions, sweet                                                -                      170008  Onions, sweet, raw
+Onions, welsh                                                -                      170007  Onions, welsh, raw
+Onions, whole                                                -                      170412  Onions, frozen, whole, unprepared
+Onions, young green, tops only                               -                      170006  Onions, young green, tops only
+Parsnips (cooked)                                            -                      170009  Parsnips, cooked, boiled, drained, without salt
+Peas and carrots (cooked)                                    -                      170018  Peas and carrots, frozen, cooked, boiled, drained, without salt
+Peas and onions                                              -                      170020  Peas and onions, frozen, unprepared
+Peas, edible-podded                                          -                      170010  Peas, edible-podded, raw
+Peas, green                                                  -                      170419  Peas, green, raw
+Peas, mature seeds, sprouted                                 -                      170422  Peas, mature seeds, sprouted, raw
+Pepper, banana                                               -                      169394  Pepper, banana, raw
+Pigeonpeas, immature seeds                                   -                      170025  Pigeonpeas, immature seeds, raw
+Pinto Beans, immature seeds                                  -                      169958  Beans, pinto, immature seeds, frozen, unprepared
+Pinto Beans, mature seeds, sprouted                          -                      170086  Beans, pinto, mature seeds, sprouted, raw
+Pokeberry shoots                                             -                      170432  Pokeberry shoots, (poke), raw
+Potatoes, Russet, flesh and skin (cooked)                    -                      170030  Potatoes, Russet, flesh and skin, baked
+Potatoes, cooked in skin, flesh and skin                     -                      170094  Potatoes, microwaved, cooked in skin, flesh and skin, without salt
+Potatoes, flesh and skin (cooked)                            -                      170093  Potatoes, baked, flesh and skin, without salt
+Potatoes, red, flesh and skin (cooked)                       -                      170435  Potatoes, red, flesh and skin, baked
+Potatoes, white, flesh and skin (cooked)                     -                      170434  Potatoes, white, flesh and skin, baked
+Potatoes, whole (cooked)                                     -                      170049  Potatoes, frozen, whole, cooked, boiled, drained, without salt
+Pumpkin (cooked)                                             -                      168449  Pumpkin, cooked, boiled, drained, without salt
+Pumpkin flowers (cooked)                                     -                      169271  Pumpkin flowers, cooked, boiled, drained, without salt
+Radish seeds, sprouted                                       -                      170095  Radish seeds, sprouted, raw
+Radishes                                                     -                      169276  Radishes, raw
+Radishes, oriental                                           -                      168451  Radishes, oriental, raw
+Radishes, white icicle                                       -                      170081  Radishes, white icicle, raw
+Rutabagas (cooked)                                           -                      168455  Rutabagas, cooked, boiled, drained, without salt
+Serrano Peppers                                              -                      169395  Peppers, serrano, raw
+Snap Beans, green                                            -                      169961  Beans, snap, green, raw
+Snap Beans, green, all styles (cooked)                       -                      169964  Beans, snap, green, frozen, all styles, microwaved
+Snap Beans, green, drained without salt (cooked)             -                      169963  Beans, snap, green, frozen, cooked, boiled, drained without salt
+Snap Beans, yellow                                           -                      169320  Beans, snap, yellow, raw
+Snap Beans, yellow, all styles                               -                      169324  Beans, snap, yellow, frozen, all styles, unprepared
+Soybeans, green                                              soy                    169282  Soybeans, green, raw
+Soybeans, mature seeds, sprouted                             soy                    169284  Soybeans, mature seeds, sprouted, raw
+Spinach                                                      -                      168462  Spinach, raw
+Spinach, chopped or leaf                                     -                      169287  Spinach, frozen, chopped or leaf, unprepared (Includes foods for USDA'
+Squash, summer, all varieties                                -                      170487  Squash, summer, all varieties, raw
+Squash, summer, crookneck and straightneck                   -                      168464  Squash, summer, crookneck and straightneck, raw
+Squash, summer, scallop                                      -                      169289  Squash, summer, scallop, raw
+Squash, summer, zucchini                                     -                      169291  Squash, summer, zucchini, includes skin, raw
+Squash, winter, all varieties (cooked)                       -                      170490  Squash, winter, all varieties, cooked, baked, without salt
+Squash, winter, butternut (cooked)                           -                      168474  Squash, winter, butternut, frozen, cooked, boiled, without salt
+Squash, zucchini, baby                                       -                      168565  Squash, zucchini, baby, raw
+Succotash                                                    -                      169300  Succotash, (corn and limas), raw
+Sweet Peppers, green                                         -                      170427  Peppers, sweet, green, raw
+Sweet Peppers, green, chopped                                -                      170022  Peppers, sweet, green, frozen, chopped, unprepared
+Sweet Peppers, red                                           -                      170108  Peppers, sweet, red, raw
+Sweet Peppers, red, chopped (cooked)                         -                      168548  Peppers, sweet, red, frozen, chopped, boiled, drained, without salt
+Sweet Peppers, red, sauteed                                  -                      168550  Peppers, sweet, red, sauteed
+Sweet Peppers, yellow                                        -                      169383  Peppers, sweet, yellow, raw
+Sweet potato (cooked)                                        -                      168484  Sweet potato, cooked, boiled, without skin
+Sweet potato, baked in skin, flesh (cooked)                  -                      168483  Sweet potato, cooked, baked in skin, flesh, without salt
+Tomatoes, green                                              -                      170456  Tomatoes, green, raw
+Tomatoes, orange                                             -                      170502  Tomatoes, orange, raw
+Tomatoes, red, ripe                                          -                      170457  Tomatoes, red, ripe, raw, year round average
+Tomatoes, yellow                                             -                      170096  Tomatoes, yellow, raw
+Turnip greens (cooked)                                       -                      170469  Turnip greens, frozen, cooked, boiled, drained, without salt
+Turnip greens and turnips (cooked)                           -                      170062  Turnip greens and turnips, frozen, cooked, boiled, drained, without sa
+Turnips (cooked)                                             -                      170060  Turnips, frozen, cooked, boiled, drained, without salt
+Vinespinach                                                  -                      170474  Vinespinach, (basella), raw
+Yambean                                                      -                      170073  Yambean (jicama), raw
+Yardlong bean                                                -                      169222  Yardlong bean, raw

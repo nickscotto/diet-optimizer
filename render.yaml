@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: diet-optimizer
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: FDC_API_KEY
+        sync: false          # paste your USDA key in the Render dashboard
+      - key: CORS_ORIGINS
+        value: https://nickscotto.github.io

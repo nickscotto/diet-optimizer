@@ -1,0 +1,667 @@
+{
+ "broccoli": {
+  "title": "Broccoli Crowns, per lb",
+  "price": 2.29,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "cauliflower": {
+  "title": "Cauliflower Crowns, each",
+  "price": 3.19,
+  "pack_g": 600.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "carrots": {
+  "title": "Baby Peeled Carrots 16 oz",
+  "price": 0.89,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "spinach": {
+  "title": "Little Salad Bar Spinach 8 oz",
+  "price": 2.09,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "kale": {
+  "title": "Simply Nature Organic Non-GMO Chopped Kale 12 oz",
+  "price": 3.85,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "lettuce": {
+  "title": "Romaine Lettuce Hearts 3 ct",
+  "price": 3.95,
+  "pack_g": 510.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cabbage": {
+  "title": "Cabbage, per lb",
+  "price": 2.37,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "brussels sprouts": {
+  "title": "Brussels Sprouts 1 lb",
+  "price": 2.79,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "asparagus": {
+  "title": "Freshire Farms Asparagus 1 lb bunch",
+  "price": 4.25,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "green beans": {
+  "title": "Season's Choice Frozen Steamed Cut Green Beans 12 oz",
+  "price": 1.09,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "peas": {
+  "title": "Season's Choice Frozen Steamed Sweet Garden Peas 12 oz",
+  "price": 0.95,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "corn": {
+  "title": "Season's Choice Frozen Steamed Super Sweet Corn 12 oz",
+  "price": 1.09,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "zucchini": {
+  "title": "Zucchini (per lb)",
+  "price": 3.13,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "bell peppers": {
+  "title": "Freshire Farms Green Peppers 3 ct",
+  "price": 2.99,
+  "pack_g": 450.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "jalapeno": {
+  "title": "Freshire Farms Jalapeno Peppers 8 oz",
+  "price": 1.09,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "onions": {
+  "title": "Fresh Yellow Onions 3 lb",
+  "price": 2.45,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "garlic": {
+  "title": "Garlic 3 ct",
+  "price": 1.49,
+  "pack_g": 150.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "mushrooms": {
+  "title": "White Mushrooms 8 oz",
+  "price": 1.65,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "tomatoes": {
+  "title": "Cherub Grape Tomatoes 10 oz",
+  "price": 2.75,
+  "pack_g": 283.5,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "potatoes": {
+  "title": "Little Yellows Fresh Potatoes 24 oz",
+  "price": 2.49,
+  "pack_g": 680.4,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "sweet potatoes": {
+  "title": "Sweet Potatoes 3 lb",
+  "price": 1.95,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cucumber": {
+  "title": "Cucumber, each",
+  "price": 0.85,
+  "pack_g": 300.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "avocado": {
+  "title": "Large Avocados, each",
+  "price": 0.75,
+  "pack_g": 150.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "butternut squash": {
+  "title": "Simply Nature Organic Frozen Steamable Butternut Squash 10 oz",
+  "price": 2.75,
+  "pack_g": 283.5,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "chicken breast": {
+  "title": "Kirkwood Chicken Breasts 48 oz",
+  "price": 9.89,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "apples": {
+  "title": "Honeycrisp Apples 2 lb",
+  "price": 1.99,
+  "pack_g": 907.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "bananas": {
+  "title": "Bananas, per lb",
+  "price": 0.15,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "oranges": {
+  "title": "Navel Oranges, Bag 3 lb",
+  "price": 3.75,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "clementines": {
+  "title": "Mandarin Oranges 3 lb",
+  "price": 4.39,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "grapes": {
+  "title": "Green Grapes, per lb",
+  "price": 4.03,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "strawberries": {
+  "title": "Strawberries 1 lb",
+  "price": 3.09,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "blueberries": {
+  "title": "Blueberries 11 oz",
+  "price": 4.75,
+  "pack_g": 311.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "raspberries": {
+  "title": "Raspberries 6 oz",
+  "price": 1.49,
+  "pack_g": 170.1,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "blackberries": {
+  "title": "Blackberries 6 oz",
+  "price": 2.49,
+  "pack_g": 170.1,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "peaches": {
+  "title": "Peaches, per lb",
+  "price": 1.05,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "pears": {
+  "title": "Bartlett Pears 3 lb",
+  "price": 2.99,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pineapple": {
+  "title": "Pineapple, each",
+  "price": 2.09,
+  "pack_g": 800.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "mango": {
+  "title": "Mango, each",
+  "price": 1.25,
+  "pack_g": 200.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "kiwi": {
+  "title": "Golden Kiwi 1 lb container",
+  "price": 5.19,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "watermelon": {
+  "title": "Personal Seedless Watermelon",
+  "price": 4.65,
+  "pack_g": 1500.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cantaloupe": {
+  "title": "Cantaloupe, each",
+  "price": 3.19,
+  "pack_g": 900.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "ground beef": {
+  "title": "85% Lean 15% Fat Ground Beef 16 oz",
+  "price": 6.95,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "ground pork": {
+  "title": "Never Any! 80% Lean Ground Pork 16 oz",
+  "price": 3.65,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pork loin": {
+  "title": "Center Cut Pork Chops, per lb",
+  "price": 2.96,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "ground turkey": {
+  "title": "Kirkwood Ground Turkey 16 oz",
+  "price": 2.45,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "beef steak": {
+  "title": "USDA Choice Black Angus Petite Sirloin Steak, per lb",
+  "price": 12.99,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "salmon": {
+  "title": "Fresh Never Frozen Atlantic Salmon Portion, per lb",
+  "price": 9.0,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "canned salmon": {
+  "title": "Northern Catch Pink Salmon 14.75 oz",
+  "price": 4.75,
+  "pack_g": 418.1,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "tilapia": {
+  "title": "Tilapia Fillets, per lb",
+  "price": 5.09,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "cod": {
+  "title": "Fremont Fish Market Wild Caught Alaskan Cod 32 oz",
+  "price": 20.89,
+  "pack_g": 907.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "rainbow trout": {
+  "title": "Fresh Never Frozen Steelhead Trout Portion, per lb",
+  "price": 10.5,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "shrimp": {
+  "title": "Peeled, Deveined & Tail-Off Raw Shrimp, per lb",
+  "price": 7.12,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "sardines": {
+  "title": "Northern Catch Sardines 3.75 oz",
+  "price": 1.75,
+  "pack_g": 106.3,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "eggs": {
+  "title": "Goldhen Large Grade A Eggs - 1 Dozen",
+  "price": 1.85,
+  "pack_g": 600.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "oats": {
+  "title": "Millville Old Fashioned Rolled Oats 42 oz",
+  "price": 4.39,
+  "pack_g": 1190.7,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "walnuts": {
+  "title": "Southern Grove Shelled Walnuts 16 oz",
+  "price": 6.59,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "almonds": {
+  "title": "Southern Grove Whole Natural Almonds 14 oz",
+  "price": 6.45,
+  "pack_g": 396.9,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pistachios": {
+  "title": "Southern Grove Shelled Pistachios 6 oz",
+  "price": 6.59,
+  "pack_g": 170.1,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "peanuts": {
+  "title": "Southern Grove Dry Roasted Peanuts 16 oz",
+  "price": 2.55,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cashews": {
+  "title": "Southern Grove Cashews Halves & Pieces 14 oz",
+  "price": 5.39,
+  "pack_g": 396.9,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pumpkin seeds": {
+  "title": "Southern Grove Roasted Pepitas 6 oz",
+  "price": 2.65,
+  "pack_g": 170.1,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "almond butter": {
+  "title": "Simply Nature Creamy Almond Butter 12 oz",
+  "price": 4.39,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "olive oil": {
+  "title": "Priano Extra Virgin Olive Oil 16.9 fl oz",
+  "price": 6.55,
+  "pack_g": 455.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "canola oil": {
+  "title": "Carlini Pure Canola Oil 48 fl oz",
+  "price": 4.29,
+  "pack_g": 1306.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cheddar": {
+  "title": "Happy Farms Sharp Cheddar Cheese Block 8 oz",
+  "price": 1.95,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "milk": {
+  "title": "Friendly Farms 2% Reduced Fat Milk 1 gal",
+  "price": 2.85,
+  "pack_g": 3900.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "greek yogurt": {
+  "title": "Friendly Farms Nonfat Plain Greek Yogurt 32 oz",
+  "price": 2.99,
+  "pack_g": 907.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cream cheese": {
+  "title": "Happy Farms Cream Cheese 8 oz",
+  "price": 1.65,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "raisins": {
+  "title": "Southern Grove California Raisins 20 oz",
+  "price": 4.39,
+  "pack_g": 567.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "dates": {
+  "title": "Southern Grove Pitted Dates 8 oz",
+  "price": 3.19,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "black beans": {
+  "title": "ALDI Black Beans 15 oz",
+  "price": 0.95,
+  "pack_g": 425.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pinto beans": {
+  "title": "ALDI Pinto Beans 15.5 oz",
+  "price": 0.95,
+  "pack_g": 439.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "kidney beans": {
+  "title": "Dakota's Pride Canned Dark Red Kidney Beans 15.5 oz",
+  "price": 0.95,
+  "pack_g": 439.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "navy beans": {
+  "title": "ALDI Great Northern Beans 15.5 oz",
+  "price": 0.95,
+  "pack_g": 439.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "chickpeas": {
+  "title": "ALDI Chickpeas 15.5 oz",
+  "price": 0.95,
+  "pack_g": 439.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "lentils": {
+  "title": "ALDI Pouch Beans, Peruvian Lentil 10 oz",
+  "price": 2.19,
+  "pack_g": 283.5,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "edamame": {
+  "title": "Season's Choice Frozen Steamed Edamame 16 oz",
+  "price": 2.75,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "tofu": {
+  "title": "Earth Grown Organic Extra Firm Tofu 14 oz",
+  "price": 1.65,
+  "pack_g": 397.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "soy milk": {
+  "title": "Simply Nature Organic Soy Milk 64 fl oz",
+  "price": 4.09,
+  "pack_g": 1950.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "cottage cheese": {
+  "title": "Friendly Farms Small Curd Cottage Cheese 24 oz",
+  "price": 3.15,
+  "pack_g": 680.4,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "mozzarella": {
+  "title": "Happy Farms Shredded Mozzarella Cheese 16 oz",
+  "price": 3.65,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "white rice": {
+  "title": "Earthly Grains Long Grain White Rice 48 oz",
+  "price": 2.95,
+  "pack_g": 1360.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "brown rice": {
+  "title": "Earthly Grains Microwavable Whole Grain Brown Rice 8.8 oz",
+  "price": 1.45,
+  "pack_g": 249.5,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "canned tuna": {
+  "title": "Northern Catch Chunk Light Tuna in Water 5 oz",
+  "price": 1.05,
+  "pack_g": 141.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "whole wheat bread": {
+  "title": "L'oven Fresh 100% Whole Wheat Bread 20 oz",
+  "price": 2.15,
+  "pack_g": 567.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "peanut butter": {
+  "title": "Peanut Delight Creamy Peanut Butter 18 oz",
+  "price": 1.75,
+  "pack_g": 510.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "chicken thigh": {
+  "title": "Never Any! Boneless Skinless Chicken Thighs, per lb",
+  "price": 4.89,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-26"
+ },
+ "pasta": {
+  "title": "Reggano Penne Rigate Pasta 16 oz",
+  "price": 1.25,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "orange juice": {
+  "title": "Nature's Nectar Orange Juice Not From Concentrate 52 fl oz",
+  "price": 4.15,
+  "pack_g": 1600.0,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "breakfast cereal": {
+  "title": "Millville Crispy Oats Cereal 12 oz",
+  "price": 2.15,
+  "pack_g": 340.2,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "hummus": {
+  "title": "Park Street Deli Classic Hummus 10 oz",
+  "price": 2.85,
+  "pack_g": 283.5,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "parmesan": {
+  "title": "Reggano Grated Parmesan Cheese 8 oz",
+  "price": 3.09,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "quinoa": {
+  "title": "Simply Nature Organic Gluten Free Quinoa 16 oz",
+  "price": 3.69,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "couscous": {
+  "title": "Earthly Grains Roasted Garlic & Olive Oil Couscous Mix 5.8 oz",
+  "price": 1.99,
+  "pack_g": 164.4,
+  "mode": "pack",
+  "date": "2026-10-26"
+ },
+ "pecans": {
+  "title": "Southern Grove Chopped Pecans 8 oz",
+  "price": 3.95,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-26"
+ }
+}

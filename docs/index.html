@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meal Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+:root {
+  --bg: #f7f4ee; --panel: #ffffff; --ink: #1f2a24; --muted: #66726b; --line: #e3ddd2;
+  --accent: #2f6b4f; --accent-ink: #ffffff; --accent-soft: #e4efe8; --warn: #a3541b; --warn-soft: #f8e9dc;
+  --bad: #a3302b; --chip: #f1ece2; --shadow: 0 1px 2px rgba(31,42,36,.06), 0 4px 16px rgba(31,42,36,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a17; --panel: #1c2420; --ink: #e8ece9; --muted: #9aa69f; --line: #2c3631;
+    --accent: #6fbf95; --accent-ink: #0f1713; --accent-soft: #23362c; --warn: #e3a06a; --warn-soft: #3a2a1d;
+    --bad: #ef8a83; --chip: #26302b; --shadow: none;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 Inter, system-ui, sans-serif; }
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 650; margin: 0; letter-spacing: -.01em; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 16px 60px; }
+header { margin-bottom: 22px; }
+header h1 { font-size: 30px; }
+header p { margin: 4px 0 0; color: var(--muted); }
+.grid { display: grid; grid-template-columns: 360px 1fr; gap: 22px; align-items: start; }
+@media (max-width: 880px) { .grid { grid-template-columns: 1fr; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+form .panel + .panel { margin-top: 14px; }
+.panel h2 { font-size: 17px; margin-bottom: 12px; }
+label { display: block; font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 4px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.row.three { grid-template-columns: 1fr 1fr 1fr; }
+.field { margin-bottom: 12px; }
+input, select { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--ink); font: inherit; }
+input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.seg { display: flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.seg button { flex: 1; border: 0; background: var(--bg); color: var(--ink); padding: 9px; font: inherit; cursor: pointer; }
+.seg button.on { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+input[type=range] { padding: 0; accent-color: var(--accent); background: none; border: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 99px; background: var(--chip); font-size: 13px; border: 1px solid transparent; }
+button.chip { cursor: pointer; color: var(--ink); font: inherit; font-size: 13px; }
+button.chip.on { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+.chip .x { border: 0; background: none; cursor: pointer; color: var(--muted); font-size: 15px; line-height: 1; padding: 0; }
+.search { position: relative; }
+.results { position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); max-height: 280px; overflow: auto; display: none; }
+.results.open { display: block; }
+.results button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 8px 12px; font: inherit; font-size: 14px; color: var(--ink); cursor: pointer; }
+.results button:hover, .results button:focus { background: var(--accent-soft); }
+.results small { color: var(--muted); }
+.liked { margin-top: 10px; }
+.go { width: 100%; margin-top: 14px; padding: 13px; border: 0; border-radius: 11px; background: var(--accent); color: var(--accent-ink); font: 600 16px Inter, sans-serif; cursor: pointer; }
+.again { margin: 0 0 14px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 14px; color: var(--muted, inherit); }
+.again button { padding: 9px 14px; border: 1px solid var(--accent); border-radius: 9px; background: transparent; color: var(--accent); font: 600 14px Inter, sans-serif; cursor: pointer; }
+.again button:disabled { opacity: .6; cursor: wait; }
+.go:disabled { opacity: .6; cursor: wait; }
+.empty { color: var(--muted); text-align: center; padding: 60px 20px; }
+.empty h2 { color: var(--ink); margin-bottom: 6px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+@media (max-width: 600px) { .stats { grid-template-columns: 1fr 1fr; } }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.stat b { display: block; font: 650 22px Fraunces, serif; }
+.stat span { font-size: 12px; color: var(--muted); }
+.meals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .meals { grid-template-columns: 1fr; } }
+.meal { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.meal .when { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.meal h3 { font-size: 18px; margin: 2px 0 6px; }
+.meal .macro { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.meal ul { list-style: none; margin: 0 0 12px; padding: 0; }
+.meal li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.meal li .amt { color: var(--muted); text-align: right; white-space: nowrap; }
+.heart { color: var(--bad); }
+.meal details.how { margin: 0 0 12px; padding: 8px 12px; }
+.meal details.how ol { margin: 8px 0 0; padding-left: 20px; font-size: 13px; }
+.meal details.how li { display: list-item; border: 0; padding: 3px 0; }
+.season { margin-top: auto; }
+.season label { margin-bottom: 6px; }
+.salty { font-size: 11px; color: var(--warn); }
+table.left th, table.left td { text-align: left; }
+.spread { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+section.more { margin-top: 18px; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin-top: 10px; }
+summary { cursor: pointer; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+th, td { padding: 6px 8px; text-align: right; border-top: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 12px; color: var(--muted); font-weight: 500; }
+td.LOW { color: var(--bad); font-weight: 600; }
+td.HIGH { color: var(--bad); font-weight: 600; }
+td.below { color: var(--warn); }
+.tablewrap { overflow-x: auto; }
+.note { font-size: 13px; color: var(--muted); }
+.error { background: var(--warn-soft); color: var(--warn); border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; }
+footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
+footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Meal Planner</h1>
+    <p>Tell it about you and the foods you like. It builds a breakfast, lunch and dinner that hit your protein, calories, vitamins and minerals.</p>
+  </header>
+
+  <div class="grid">
+    <form id="form" autocomplete="off">
+      <div class="panel">
+        <h2>You</h2>
+        <div class="field">
+          <label>Sex</label>
+          <div class="seg" id="sex"><button type="button" data-v="male">Male</button><button type="button" data-v="female">Female</button></div>
+        </div>
+        <div class="row three">
+          <div><label for="age">Age</label><input id="age" type="number" min="18" max="100" required></div>
+          <div><label for="ft">Height ft</label><input id="ft" type="number" min="4" max="7" required></div>
+          <div><label for="inch">in</label><input id="inch" type="number" min="0" max="11.9" step="0.5" required></div>
+        </div>
+        <div class="row">
+          <div><label for="weight">Weight (lb)</label><input id="weight" type="number" min="80" max="600" step="0.5" required></div>
+          <div><label for="waist">Waist (in) <small>(optional)</small></label><input id="waist" type="number" min="20" max="70" step="0.5" placeholder="pant size"></div>
+        </div>
+        <div class="field">
+          <select id="waistkind" aria-label="Waist measurement type">
+            <option value="pants">Waist is my pant size (tag)</option>
+            <option value="tape">Waist is measured with a tape at the navel</option>
+          </select>
+        </div>
+        <div class="hint" style="margin:-6px 0 12px">Protein is set from lean mass. Your waist and height give a body fat estimate (relative fat mass; typically off by several points, and a pant tag reads about an inch small, which is corrected). Blank uses a weaker estimate from height and weight.</div>
+        <div class="field">
+          <label for="activity">Activity</label>
+          <select id="activity">
+            <option value="sedentary">Sedentary: desk job, little exercise</option>
+            <option value="light">Light: exercise 1–3 days/week</option>
+            <option value="moderate">Moderate: lifting 3–5 days/week + walking</option>
+            <option value="very">Very active: hard training 6–7 days/week</option>
+            <option value="extreme">Extreme: physical job + training</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="goal">Goal</label>
+          <select id="goal">
+            <option value="22">Lose fat, keep and build muscle</option>
+            <option value="10">Recomp: slow fat loss, more muscle</option>
+            <option value="0">Maintain</option>
+            <option value="-10">Build muscle (small surplus)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="deficit">Calorie adjustment: <span id="deficitOut"></span></label>
+          <input id="deficit" type="range" min="-15" max="30" step="1">
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Diet</h2>
+        <div class="field">
+          <label for="diet">Style</label>
+          <select id="diet">
+            <option value="omnivore">Everything</option>
+            <option value="pescatarian">Pescatarian (no meat)</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+          </select>
+        </div>
+        <label>Avoid</label>
+        <div class="chips" id="avoid">
+          <button type="button" class="chip" data-v="dairy">Dairy</button>
+          <button type="button" class="chip" data-v="egg">Eggs</button>
+          <button type="button" class="chip" data-v="fish">Fish</button>
+          <button type="button" class="chip" data-v="pork">Pork</button>
+          <button type="button" class="chip" data-v="soy">Soy</button>
+          <button type="button" class="chip" data-v="gluten">Gluten</button>
+          <button type="button" class="chip" data-v="tree_nut">Tree nuts</button>
+          <button type="button" class="chip" data-v="peanut">Peanuts</button>
+        </div>
+        <div class="hint">Filters apply to every food. A food you add below that matches one is left out and the plan says so.</div>
+        <div><label for="days">Grocery basket covers (days)</label><input id="days" type="number" min="1" max="14" step="1" value="4"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Foods you like</h2>
+        <div class="search">
+          <input id="q" type="search" placeholder="Search USDA foods, e.g. chicken thigh, cheddar" aria-label="Search foods">
+          <div class="results" id="results" role="listbox"></div>
+        </div>
+        <div class="chips liked" id="liked"></div>
+        <div class="hint">The plan leans toward these and fills nutrient gaps with staples (eggs, salmon, oats, beans, vegetables, fruit…).</div>
+      </div>
+
+      <button class="go" id="go" type="submit">Build my day</button>
+    </form>
+
+    <main id="out">
+      <div class="panel empty">
+        <h2>Your day shows up here</h2>
+        <p>Fill in your stats, add a few foods you like, and press <b>Build my day</b>.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    Planning tool, not medical advice. Protein targets assume healthy kidneys; with kidney disease or other conditions, ask your doctor what protein and potassium are right for you.
+    Nutrient data: <a href="https://fdc.nal.usda.gov" target="_blank" rel="noopener">USDA FoodData Central</a>.
+    Meal pairing and seasonings: <a href="https://huggingface.co/datasets/Kaikaku/epicure-corpus-resources" target="_blank" rel="noopener">Epicure-Cooc</a> (Radzikowski &amp; Chen 2026, CC BY 4.0).
+  </footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const n0 = x => Math.round(x).toLocaleString();
+
+const state = Object.assign({
+  sex: "male", age: "", ft: "", inch: "", weight: "", waist: "", waistkind: "pants", activity: "moderate",
+  goal: "22", deficit: 22, diet: "omnivore", avoid: [], liked: [],
+}, store.get("planner", {}));
+
+function save() { store.set("planner", state); }
+
+function bindInputs() {
+  for (const id of ["age", "ft", "inch", "weight", "waist", "waistkind", "activity", "diet"]) {
+    const el = $("#" + id);
+    el.value = state[id];
+    el.addEventListener("input", () => { state[id] = el.value; save(); });
+  }
+  const goal = $("#goal"), deficit = $("#deficit");
+  goal.value = state.goal; deficit.value = state.deficit; showDeficit();
+  goal.addEventListener("change", () => { state.goal = goal.value; state.deficit = +goal.value; deficit.value = state.deficit; showDeficit(); save(); });
+  deficit.addEventListener("input", () => { state.deficit = +deficit.value; showDeficit(); save(); });
+  for (const b of document.querySelectorAll("#sex button")) {
+    b.classList.toggle("on", b.dataset.v === state.sex);
+    b.addEventListener("click", () => { state.sex = b.dataset.v; save(); document.querySelectorAll("#sex button").forEach(x => x.classList.toggle("on", x === b)); });
+  }
+  for (const b of document.querySelectorAll("#avoid button")) {
+    b.classList.toggle("on", state.avoid.includes(b.dataset.v));
+    b.setAttribute("aria-pressed", state.avoid.includes(b.dataset.v));
+    b.addEventListener("click", () => {
+      const v = b.dataset.v, on = !state.avoid.includes(v);
+      state.avoid = on ? [...state.avoid, v] : state.avoid.filter(x => x !== v);
+      b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); save();
+    });
+  }
+}
+function showDeficit() {
+  const d = state.deficit;
+  $("#deficitOut").textContent = d > 0 ? `${d}% below maintenance` : d < 0 ? `${-d}% above maintenance` : "at maintenance";
+}
+
+function renderLiked() {
+  $("#liked").innerHTML = state.liked.map((f, i) =>
+    `<span class="chip">${esc(f.name)}<button type="button" class="x" data-i="${i}" aria-label="Remove ${esc(f.name)}">×</button></span>`).join("");
+  document.querySelectorAll("#liked .x").forEach(b => b.addEventListener("click", () => {
+    state.liked.splice(+b.dataset.i, 1); save(); renderLiked();
+  }));
+}
+const shortName = d => d.split(",").slice(0, 2).map(s => s.trim()).join(", ").slice(0, 60);
+
+let timer, seq = 0;
+$("#q").addEventListener("input", e => {
+  clearTimeout(timer);
+  const q = e.target.value.trim();
+  if (q.length < 2) { $("#results").classList.remove("open"); return; }
+  timer = setTimeout(async () => {
+    const my = ++seq;
+    try {
+      const r = await fetch((window.API_BASE || "") + "/api/search?q=" + encodeURIComponent(q));
+      const hits = r.ok ? await r.json() : [];
+      if (my !== seq) return;
+      const box = $("#results");
+      box.innerHTML = hits.length ? hits.map(h =>
+        `<button type="button" data-id="${h.fdc_id}" data-d="${esc(h.description)}">${esc(h.description)} <small>${esc(h.data_type)}</small></button>`).join("")
+        : `<button type="button" disabled>No matches. Try simpler words.</button>`;
+      box.classList.add("open");
+      box.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => {
+        const id = +b.dataset.id;
+        if (!state.liked.some(f => f.fdc_id === id)) state.liked.push({ fdc_id: id, name: shortName(b.dataset.d), description: b.dataset.d });
+        save(); renderLiked(); box.classList.remove("open"); $("#q").value = ""; $("#q").focus();
+      }));
+    } catch { /* network hiccup: leave results closed */ }
+  }, 300);
+});
+let rotate = [], planNo = 0, wantDifferent = false;   // foods of the plan on screen, sent when "Different plan" is pressed
+
+document.addEventListener("click", e => { if (!e.target.closest(".search")) $("#results").classList.remove("open"); });
+
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const again = wantDifferent && rotate.length; wantDifferent = false;   // "Different plan" avoids the foods on screen
+  if (!again) { rotate = []; planNo = 0; }
+  const go = $("#go"); go.disabled = true; go.textContent = "Building your day…";
+  const body = {
+    profile: {
+      sex: state.sex, age: +state.age, height_in: (+state.ft) * 12 + (+state.inch || 0), weight_lb: +state.weight,
+      waist_in: state.waist ? +state.waist : null, waist_kind: state.waistkind, activity: state.activity, deficit_pct: +state.deficit,
+    },
+    diet: state.diet, avoid: state.avoid, liked: state.liked.map(f => ({ fdc_id: f.fdc_id, name: f.name })),
+    rotate: again ? rotate : [],
+    days: Math.min(14, Math.max(1, Math.round(+$("#days").value) || 4)),
+  };
+  try {
+    const r = await fetch((window.API_BASE || "") + "/api/plan", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Check your entries: some numbers are out of range.");
+    planNo += 1;
+    rotate = [...new Set(data.meals.flatMap(m => m.items.map(it => it.key)))];
+    render(data);
+  } catch (err) {
+    $("#out").innerHTML = `<div class="error">${esc(err.message)}</div>`;
+  } finally { go.disabled = false; go.textContent = "Build my day"; }
+});
+
+function render(d) {
+  const N = d.numbers, P = N.protein;
+  const pace = N.lb_per_week > 0.05 ? `≈ ${N.lb_per_week.toFixed(1)} lb/week fat loss` : N.lb_per_week < -0.05 ? `≈ ${(-N.lb_per_week).toFixed(1)} lb/week gain` : "holding steady";
+  const stats = `
+    <div class="stats">
+      <div class="stat"><b>${n0(N.kcal)}</b><span>kcal/day · maintenance ${n0(N.maintenance)}</span></div>
+      <div class="stat"><b>${n0(P.goal)} g</b><span>protein aim (${n0(P.min)}–${n0(P.max)} g)</span></div>
+      <div class="stat"><b>${n0(N.lbm_lb)} lb</b><span>lean mass, ${esc(N.lbm_source)}</span></div>
+      <div class="stat"><b>${d.food_count}</b><span>foods · ${pace}</span></div>
+    </div>`;
+  const meals = d.meals.map(m => `
+    <article class="meal">
+      <div class="when">${esc(m.name)}</div>
+      <h3>${esc(m.title || "—")}</h3>
+      <div class="macro">${n0(m.kcal)} kcal · ${n0(m.protein)} g protein · ${m.leucine_g.toFixed(1)} g leucine</div>
+      <ul>${m.items.map(it => `<li><span>${it.liked ? '<span class="heart" title="You like this">♥</span> ' : ""}${esc(it.name)}</span>
+        <span class="amt">${n0(it.grams)} g<br><small>about ${+it.servings.toFixed(1)} × ${esc(it.label)}</small></span></li>`).join("")}</ul>
+      ${m.steps && m.steps.length ? `<details class="how" open><summary>How to make it</summary><ol>${m.steps.map(t => `<li>${esc(t)}</li>`).join("")}</ol></details>` : ""}
+      ${m.seasonings.length ? `<div class="season"><label>Season with</label><div class="chips">${m.seasonings.map(s =>
+        `<span class="chip">${esc(s.label)}${s.high_sodium ? ' <span class="salty">salty</span>' : ""}</span>`).join("")}</div></div>` : ""}
+    </article>`).join("");
+  const spread = d.spread.map(s => `${+s.servings.toFixed(1)} × ${esc(s.label)} ${esc(s.name.toLowerCase())}`).join(", ");
+  const fmt = x => x == null ? "" : Math.abs(x) >= 100 ? n0(x) : Math.abs(x) >= 10 ? x.toFixed(1) : x.toFixed(2);
+  const flag = { LOW: "low", HIGH: "over", "below goal": "under goal" };
+  const rows = d.nutrients.map(r => `<tr><td>${esc(r.label)}</td><td class="${r.status === "below goal" ? "below" : r.status}">${fmt(r.amount)} ${esc(r.unit)}${flag[r.status] ? " · " + flag[r.status] : ""}</td>
+    <td>${fmt(r.min)}</td><td>${fmt(r.goal)}</td><td>${fmt(r.max)}</td></tr>`).join("");
+  const liked = d.liked.length ? `<details open><summary>Your foods</summary><table><tr><th>Food</th><th>Serving</th><th>In plan</th></tr>${d.liked.map(f =>
+    `<tr><td title="${esc(f.description)}">${esc(f.name)}</td><td>${esc(f.serving)}</td><td>${f.used ? (f.forced ? "yes (added)" : "yes") : "left out"}</td></tr>`).join("")}</table>
+    ${d.forced && d.forced.length ? `<ul class="note">${d.forced.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+    <p class="note">Foods you like are always included when they can fit in a meal. If one pushes a nutrient off target, the plan says which.</p></details>` : "";
+  const b = d.basket;
+  const basket = b && b.items.length ? `<details open class="basket"><summary>Aldi basket for ${b.days} day${b.days > 1 ? "s" : ""}: $${b.total.toFixed(2)}</summary>
+    <div class="tablewrap"><table class="left"><tr><th>Food</th><th>Aldi product</th><th>Buy</th><th>Price</th><th>Left over</th></tr>${b.items.map(i =>
+      `<tr><td>${esc(i.name)}</td><td>${esc(i.product)}</td><td>${esc(i.buy)}</td><td>$${i.cost.toFixed(2)}</td><td>${i.leftover_g ? n0(i.leftover_g) + " g" : ""}</td></tr>`).join("")}
+      <tr><td colspan="3"><b>Total</b></td><td><b>$${b.total.toFixed(2)}</b></td><td></td></tr></table></div>
+    <p class="note">Whole packages at zip 32940 prices from ${esc(b.priced_on || "")}. Prices change and sizes are rounded up, so treat the total as an estimate.${b.unpriced.length ? " No price on file for: " + esc(b.unpriced.join(", ")) + "." : ""}</p></details>` : "";
+  const gaps = d.gaps.length ? `<details open><summary>Data gaps</summary><ul class="note">${d.gaps.map(g => `<li>${esc(g)}</li>`).join("")}</ul></details>` : "";
+  const again = `<div class="again"><span>Plan ${planNo}. Eating one plan for 3–4 days keeps calories easy to control.</span>
+    <button type="button" id="different">Different plan</button></div>`;
+  $("#out").innerHTML = `${stats}${again}<div class="meals">${meals}</div>
+    ${spread ? `<p class="spread">Across all meals: ${spread}.</p>` : ""}
+    <section class="more">${basket}${liked}
+      <details><summary>All nutrients</summary><div class="tablewrap"><table><tr><th></th><th>Amount</th><th>Min</th><th>Goal</th><th>Max</th></tr>${rows}</table></div>
+        <p class="note">Min is the RDA, goal is a higher target for people who train, max stays under the safe upper limit. Iodine isn't in USDA data; iodized salt, eggs and dairy cover it.</p></details>
+      ${gaps}</section>`;
+}
+
+bindInputs(); renderLiked();
+$("#out").addEventListener("click", e => {
+  if (e.target.id !== "different") return;
+  e.target.disabled = true; e.target.textContent = "Building…";
+  wantDifferent = true;
+  $("#form").requestSubmit();
+});
+</script>
+</body>
+</html>
