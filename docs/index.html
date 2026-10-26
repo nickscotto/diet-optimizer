@@ -310,13 +310,19 @@ $("#form").addEventListener("submit", async e => {
   };
   try {
     const r = await fetch((window.API_BASE || "") + "/api/plan", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-    const data = await r.json();
+    const text = await r.text();
+    let data;
+    try { data = JSON.parse(text); } catch (_) {
+      throw new Error(window.API_BASE || /^(localhost|127\.)/.test(location.hostname)
+        ? "The planner server returned an unexpected reply. If it just woke up, wait a minute and try again."
+        : "The planner server isn't connected yet, so plans can't be built from this page.");
+    }
     if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Check your entries: some numbers are out of range.");
     planNo += 1;
     rotate = [...new Set(data.meals.flatMap(m => m.items.map(it => it.key)))];
     render(data);
   } catch (err) {
-    $("#out").innerHTML = `<div class="error">${esc(err.message)}</div>`;
+    $("#out").innerHTML = `<div class="error">${esc(err instanceof TypeError ? "Can't reach the planner server. If it was idle, wait a minute and try again." : err.message)}</div>`;
   } finally { go.disabled = false; go.textContent = "Build my day"; }
 });
 
