@@ -117,7 +117,7 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
     y = lambda i, m: Y + i * M + m
     s = lambda m, k: S + m * 9 + k        # 0 main, 1 veg, 2 base, 3 starch, 4 kcal low, 5 kcal high, 6/7 protein dev, 8 leucine low
 
-    clash = [] if relax else _clashes(foods)
+    clash = [] if relax else _clashes(foods) + _juice_clashes(foods)
     slack_cost = np.zeros(n_vars)
     rows, lo, hi = [], [], []
 
@@ -291,6 +291,18 @@ def _clashes(foods):
            if f.get("epicure") and ep.has(f["epicure"]) and f["role"] in PAIR_ROLES]
     return [(i, j) for a, i in enumerate(idx) for j in idx[a + 1:]
             if ep.similarity(foods[i]["epicure"], foods[j]["epicure"]) < CLASH_BELOW]
+
+
+def _fruit_word(name):
+    return name.lower().split()[0].strip(",").rstrip("s") if name.split() else ""
+
+
+def _juice_clashes(foods):
+    """Index pairs (a juice, the fruit it is made from) that never share a meal: orange juice with oranges."""
+    juices = [i for i, f in enumerate(foods) if "juice" in f["name"].lower() and f["role"] == "fruit"]
+    return [(i, j) for i in juices for j, g in enumerate(foods)
+            if j != i and g["role"] == "fruit" and "juice" not in g["name"].lower()
+            and _fruit_word(g["name"]) == _fruit_word(foods[i]["name"])]
 
 
 def _pooled(foods, targets, step, required, max_foods, time_limit, extra, fast):
