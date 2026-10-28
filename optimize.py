@@ -46,6 +46,20 @@ def load_config(path=HERE / "config.yaml"):
 # ---------------------------------------------------------------- targets ---
 PANT_TAG_EXTRA_IN = 1.0   # a pant tag runs about an inch under the real waist (vanity sizing)
 BODY_FAT_RANGE = (5.0, 55.0)
+# Women's US pant tag size -> waist in inches, a common size chart (sizes run by brand; the pant-tag correction above
+# is added on top, as for men).
+WOMENS_SIZE_WAIST = [(0, 24), (2, 25), (4, 26), (6, 27), (8, 28), (10, 29), (12, 30.5), (14, 32), (16, 34), (18, 36),
+                     (20, 38), (22, 40), (24, 42)]
+
+
+def us_pant_size_to_waist_in(size):
+    """Waist in inches for a women's US pant size, between chart rows interpolated; past size 24, 2 in per size."""
+    if size >= WOMENS_SIZE_WAIST[-1][0]:
+        return WOMENS_SIZE_WAIST[-1][1] + 2.0 * (size - WOMENS_SIZE_WAIST[-1][0])
+    size = max(size, WOMENS_SIZE_WAIST[0][0])
+    for (s0, w0), (s1, w1) in zip(WOMENS_SIZE_WAIST, WOMENS_SIZE_WAIST[1:]):
+        if size <= s1:
+            return w0 + (w1 - w0) * (size - s0) / (s1 - s0)
 
 
 def waist_body_fat(p):

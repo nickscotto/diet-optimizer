@@ -109,7 +109,10 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
     W = 2 * n * M
     T = W + n
     S = T + len(tiers)                    # per-meal structure slacks, 9 each
-    n_vars = S + 9 * M
+    whole = [i for i, f in enumerate(foods) if f.get("whole")]    # foods that come in whole servings (eggs): u = q / step, q integer
+    Q0 = S + 9 * M
+    n_vars = Q0 + len(whole) * M
+    q = lambda k, m: Q0 + k * M + m
     u = lambda i, m: U + i * M + m
     y = lambda i, m: Y + i * M + m
     s = lambda m, k: S + m * 9 + k        # 0 main, 1 veg, 2 base, 3 starch, 4 kcal low, 5 kcal high, 6/7 protein dev, 8 leucine low
@@ -197,9 +200,14 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
         for m in range(M):
             ub[u(i, m)] = cap[i] if f["allowed"][m] else 0
             ub[y(i, m)] = 1 if f["allowed"][m] else 0
+    for k, i in enumerate(whole):
+        for m in range(M):
+            ub[q(k, m)] = int(ub[u(i, m)] * step + 1e-9)
+            add([(u(i, m), 1.0), (q(k, m), -1.0 / step)], 0, 0)
     integrality = np.zeros(n_vars)
     if not relax:
-        integrality[Y:T] = 1       # which foods go in which meals; portions are made whole in the last pass
+        integrality[Y:T] = 1
+        integrality[Q0:] = 1       # which foods go in which meals; portions are made whole in the last pass
 
     for i, f in enumerate(foods):    # low-cost mode: price per serving, set by the caller
         if f.get("price_per_serving"):
@@ -258,6 +266,7 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
         lb2, ub2 = lb.copy(), ub.copy()
         lb2[fixed[0]:fixed[1]] = ub2[fixed[0]:fixed[1]] = np.round(x[fixed[0]:fixed[1]])
         integ2 = np.zeros(n_vars)
+        integ2[Q0:] = 1                        # whole-serving foods stay whole in every pass
         if k < len(passes) - 1:
             integ2[whole[0]:whole[1]] = 1      # the last pass leaves the amounts continuous: any number of grams
         res2 = milp(cost, constraints=cons, integrality=integ2, bounds=Bounds(lb2, ub2),

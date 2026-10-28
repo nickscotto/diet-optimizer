@@ -20,9 +20,13 @@ PATH = Path(__file__).parent / "data" / "catalog.json"
 PORK = re.compile(r"\b(pork|bacon|ham|prosciutto|pancetta|sausages?|bratwurst|lard|salami|pepperoni)\b", re.I)
 
 
+WHEY = re.compile(r"\bwhey\b|protein (powder|isolate)", re.I)
+
+
 def extra_tags(food):
     """Avoid-list tags the catalog build did not add."""
-    return ["pork"] if PORK.search(f"{food.get('name', '')} {food.get('description', '')}") else []
+    text = f"{food.get('name', '')} {food.get('description', '')}"
+    return (["pork"] if PORK.search(text) else []) + (["whey"] if WHEY.search(text) else [])
 # How many catalog foods to keep per role (on top of staples and liked foods).
 QUOTAS = {"protein": 22, "starch": 12, "veg": 24, "fruit": 12, "fat": 8, "drink": 3, "other": 6}
 SKIP_NUTRIENTS = {"energy", "protein", "fat", "carbs", "sodium", "fiber"}

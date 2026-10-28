@@ -69,6 +69,7 @@ class Profile(BaseModel):
     height_in: float = Field(ge=48, le=90)
     weight_lb: float = Field(ge=80, le=600)
     body_fat_pct: Optional[float] = Field(default=None, ge=3, le=70)
+    pant_size: Optional[float] = Field(default=None, ge=0, le=30)   # women's US pant tag size (0, 2, 4...); used instead of waist_in
     waist_in: Optional[float] = Field(default=None, ge=20, le=70)   # estimates body fat when body_fat_pct is blank
     waist_kind: Literal["pants", "tape"] = "pants"                  # pant-tag size or tape-measured waist
     activity: Literal["sedentary", "light", "moderate", "very", "extreme"]
@@ -83,7 +84,7 @@ class Liked(BaseModel):
 class PlanRequest(BaseModel):
     profile: Profile
     diet: Literal["omnivore", "pescatarian", "vegetarian", "vegan"] = "omnivore"
-    avoid: list[Literal["dairy", "egg", "fish", "pork", "soy", "gluten", "tree_nut", "peanut"]] = []
+    avoid: list[Literal["dairy", "egg", "fish", "pork", "whey", "soy", "gluten", "tree_nut", "peanut"]] = []
     liked: list[Liked] = Field(default=[], max_length=30)
     rotate: list[str] = Field(default=[], max_length=80)   # foods in the previous plan: use different ones this time
     low_cost: bool = False                                  # prefer the cheapest plan that still meets the targets
@@ -231,6 +232,8 @@ def plan(req: PlanRequest):
 def build_plan(req):
     cfg, ep = config(), epicure.load()
     profile = req.profile.model_dump()
+    if profile["sex"] == "female" and profile.get("pant_size") is not None:
+        profile["waist_in"], profile["waist_kind"] = optimize.us_pant_size_to_waist_in(profile["pant_size"]), "pants"
     targets, info = optimize.all_targets(profile, cfg, req.diet)
     if req.diet in ("omnivore", "pescatarian"):
         # Pushing iron toward the upper limit is for plant-based eaters: non-heme iron is absorbed less
@@ -271,6 +274,9 @@ def build_plan(req):
         pool = fodmap.apply(pool)
     extra = catalog.shortlist(pool, targets)
     foods = liked + staples_ + extra
+    for f in foods:
+        if aldi.type_of(f) == "eggs":
+            f["whole"] = True                # eggs come in whole eggs
     if req.low_cost:
         fallback = basket.median_per_gram()
         for f in foods:

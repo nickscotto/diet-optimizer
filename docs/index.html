@@ -127,11 +127,11 @@ footer a { color: inherit; }
         </div>
         <div class="row">
           <div><label for="weight">Weight (lb)</label><input id="weight" type="number" min="80" max="600" step="0.5" required></div>
-          <div><label for="waist">Waist (in) <small>(optional)</small></label><input id="waist" type="number" min="20" max="70" step="0.5" placeholder="pant size"></div>
+          <div><label for="waist" id="waistlabel">Waist (in) <small>(optional)</small></label><input id="waist" type="number" min="20" max="70" step="0.5" placeholder="pant size"></div>
         </div>
         <div class="field">
           <select id="waistkind" aria-label="Waist measurement type">
-            <option value="pants">Waist is my pant size (tag)</option>
+            <option value="pants" id="pantsopt">Waist is my pant size (tag)</option>
             <option value="tape">Waist is measured with a tape at the navel</option>
           </select>
         </div>
@@ -178,6 +178,7 @@ footer a { color: inherit; }
           <button type="button" class="chip" data-v="egg">Eggs</button>
           <button type="button" class="chip" data-v="fish">Fish</button>
           <button type="button" class="chip" data-v="pork">Pork</button>
+          <button type="button" class="chip" data-v="whey">Whey protein</button>
           <button type="button" class="chip" data-v="soy">Soy</button>
           <button type="button" class="chip" data-v="gluten">Gluten</button>
           <button type="button" class="chip" data-v="tree_nut">Tree nuts</button>
@@ -237,19 +238,31 @@ const state = Object.assign({
 
 function save() { store.set("planner", state); }
 
+const womensSize = () => state.sex === "female" && state.waistkind === "pants";
+function syncWaist() {     // women entering a pant tag give a US size (0, 2, 4...); everyone else gives inches
+  const el = $("#waist"), size = womensSize();
+  $("#waistlabel").innerHTML = size ? "US pant size <small>(optional)</small>" : "Waist (in) <small>(optional)</small>";
+  $("#pantsopt").textContent = state.sex === "female" ? "Number is my US pant size (tag)" : "Waist is my pant size (tag)";
+  el.min = size ? 0 : 20; el.max = size ? 30 : 70; el.step = size ? 1 : 0.5; el.placeholder = size ? "e.g. 8" : "pant size";
+  el.value = (size ? state.pant : state.waist) || "";
+}
+
 function bindInputs() {
-  for (const id of ["age", "ft", "inch", "weight", "waist", "waistkind", "activity", "diet"]) {
+  for (const id of ["age", "ft", "inch", "weight", "waistkind", "activity", "diet"]) {
     const el = $("#" + id);
     el.value = state[id];
     el.addEventListener("input", () => { state[id] = el.value; save(); });
   }
+  const waist = $("#waist");
+  waist.addEventListener("input", () => { state[womensSize() ? "pant" : "waist"] = waist.value; save(); });
+  $("#waistkind").addEventListener("input", syncWaist);
   const goal = $("#goal"), deficit = $("#deficit");
   goal.value = state.goal; deficit.value = state.deficit; showDeficit();
   goal.addEventListener("change", () => { state.goal = goal.value; state.deficit = +goal.value; deficit.value = state.deficit; showDeficit(); save(); });
   deficit.addEventListener("input", () => { state.deficit = +deficit.value; showDeficit(); save(); });
   for (const b of document.querySelectorAll("#sex button")) {
     b.classList.toggle("on", b.dataset.v === state.sex);
-    b.addEventListener("click", () => { state.sex = b.dataset.v; save(); document.querySelectorAll("#sex button").forEach(x => x.classList.toggle("on", x === b)); });
+    b.addEventListener("click", () => { state.sex = b.dataset.v; save(); syncWaist(); document.querySelectorAll("#sex button").forEach(x => x.classList.toggle("on", x === b)); });
   }
   for (const b of document.querySelectorAll("#avoid button")) {
     b.classList.toggle("on", state.avoid.includes(b.dataset.v));
@@ -311,7 +324,7 @@ $("#form").addEventListener("submit", async e => {
   const body = {
     profile: {
       sex: state.sex, age: +state.age, height_in: (+state.ft) * 12 + (+state.inch || 0), weight_lb: +state.weight,
-      waist_in: state.waist ? +state.waist : null, waist_kind: state.waistkind, activity: state.activity, deficit_pct: +state.deficit,
+      waist_in: !womensSize() && state.waist ? +state.waist : null, pant_size: womensSize() && state.pant !== undefined && state.pant !== "" ? +state.pant : null, waist_kind: state.waistkind, activity: state.activity, deficit_pct: +state.deficit,
     },
     diet: state.diet, avoid: state.avoid, low_fodmap: !!state.fodmap, low_cost: !!state.lowcost, liked: state.liked.map(f => ({ fdc_id: f.fdc_id, name: f.name })),
     rotate: again ? rotate : [],
@@ -383,7 +396,7 @@ function render(d) {
       ${gaps}</section>`;
 }
 
-bindInputs(); renderLiked();
+bindInputs(); syncWaist(); renderLiked();
 $("#out").addEventListener("click", e => {
   if (e.target.id !== "different") return;
   e.target.disabled = true; e.target.textContent = "Building…";

@@ -132,7 +132,7 @@ foods:
     per_serving: {energy: 110, protein: 25, fat: 0.5, carbs: 1, sodium: 100, calcium: 120, potassium: 150,
                   his: 458, ile: 1390, leu: 2293, lys: 1991, saa: 955, aaa: 1489, thr: 1580, trp: 396, val: 1348}
     epicure: whey
-    contains: [dairy]
+    contains: [dairy, whey]
 
   # Grains / starches / milk
   - {name: Oats, query: "Cereals, oats, regular and quick, not fortified, dry", serving_g: 40, label: "1/2 cup dry", max_servings: 3,
