@@ -33,6 +33,17 @@ QUOTAS = {"protein": 22, "starch": 12, "veg": 24, "fruit": 12, "fat": 8, "drink"
 SKIP_NUTRIENTS = {"energy", "protein", "fat", "carbs", "sodium", "fiber"}
 
 
+SOFT_CHEESE = re.compile(r"cottage|ricotta", re.I)
+
+
+def _cheese_ounce(c):
+    """USDA lists some cheeses by the cup (100 g of grated parmesan, 240 g of cream cheese). Portion cheese by
+    the ounce instead, at most 3 oz a day (1.5 for parmesan)."""
+    if "cheese" in c["name"].lower() and not SOFT_CHEESE.search(c["name"]) and c["serving_g"] > 40:
+        return {**c, "serving_g": 28.35, "label": "1 oz", "max_servings": 1.5 if re.search("parmesan|romano", c["name"], re.I) else 3}
+    return c
+
+
 @lru_cache(maxsize=1)
 def _load():
     """Catalog foods with roles; shared and read-only (copy before changing)."""
@@ -40,7 +51,7 @@ def _load():
         return []
     ep = epicure.load()
     foods = []
-    for c in json.loads(PATH.read_text(encoding="utf-8")):
+    for c in map(_cheese_ounce, json.loads(PATH.read_text(encoding="utf-8"))):
         scale = c["serving_g"] / 100.0
         food = {**c, "source": f"USDA {c['fdc_id']}"}
         food["contains"] = sorted(set(c["contains"]) | set(extra_tags(c)))
