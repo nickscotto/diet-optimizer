@@ -27,6 +27,7 @@ from pydantic import BaseModel, Field
 import aldi
 import basket
 import fodmap
+import labels
 import aminos
 import catalog
 import contaminants
@@ -81,11 +82,17 @@ class Liked(BaseModel):
     name: Optional[str] = Field(default=None, max_length=60)
 
 
+class Dislike(BaseModel):
+    fdc_id: Optional[int] = None            # a specific USDA food, or
+    type: Optional[str] = Field(default=None, max_length=40)   # an Aldi food type ("mushrooms"): any kind
+
+
 class PlanRequest(BaseModel):
     profile: Profile
     diet: Literal["omnivore", "pescatarian", "vegetarian", "vegan"] = "omnivore"
     avoid: list[Literal["dairy", "egg", "fish", "pork", "whey", "soy", "gluten", "tree_nut", "peanut"]] = []
     liked: list[Liked] = Field(default=[], max_length=30)
+    disliked: list[Dislike] = Field(default=[], max_length=30)   # never used; matched by Aldi food type
     rotate: list[str] = Field(default=[], max_length=80)   # foods in the previous plan: use different ones this time
     low_cost: bool = False                                  # prefer the cheapest plan that still meets the targets
     low_fodmap: bool = False                                # only foods rated low FODMAP, with daily caps
@@ -209,6 +216,13 @@ def search(q: str = Query(min_length=2, max_length=80)):
         raise HTTPException(502, str(e))
 
 
+@app.get("/api/types")
+def food_types(q: str = Query(min_length=2, max_length=40)):
+    """Aldi food types whose name contains the query, for the dislike picker."""
+    q = q.strip().lower()
+    return sorted({label for label, _, _ in aldi.TYPES if q in label.lower()})[:8]
+
+
 @app.get("/api/staples")
 def staples():
     return [{"name": f["name"], "label": f["label"], "contains": f.get("contains", []),
@@ -244,8 +258,16 @@ def build_plan(req):
         liked = [liked_food(item, ep) for item in req.liked]
     except usda.USDAError as e:
         raise HTTPException(502, str(e))
-    not_aldi = [f["name"] for f in liked if not aldi.allowed(f)]
-    liked = [f for f in liked if aldi.allowed(f)]
+    not_aldi = [f["name"] for f in liked if not (aldi.allowed(f) and basket.product(f))]
+    liked = [f for f in liked if aldi.allowed(f) and basket.product(f)]
+    try:
+        disliked = [liked_food(item, ep) for item in req.disliked if item.fdc_id]
+    except usda.USDAError as e:
+        raise HTTPException(502, str(e))
+    hated = {aldi.type_of(f) for f in disliked} | {d.type for d in req.disliked if d.type}
+    hated -= {None}      # a dislike removes every food of that Aldi type
+    disliked_away = [f["name"] for f in liked if aldi.type_of(f) in hated]
+    liked = [f for f in liked if aldi.type_of(f) not in hated]
     excluded = DIET_EXCLUDES[req.diet] | set(req.avoid)
     avoided = [f["name"] for f in liked if excluded & set(f["contains"])]
     liked = [f for f in liked if not excluded & set(f["contains"])]
@@ -256,8 +278,8 @@ def build_plan(req):
             avoided += dropped
     liked_ids = {f["fdc_id"] for f in liked}
     staple_cfg = {**cfg, "foods": [f for f in cfg["foods"]
-                                   if not excluded & set(f.get("contains", [])) and aldi.allowed(f)
-                                   and f.get("fdc_id") not in liked_ids]}
+                                   if not excluded & set(f.get("contains", [])) and aldi.allowed(f) and basket.product(f)
+                                   and f.get("fdc_id") not in liked_ids and aldi.type_of(f) not in hated]}
     staples_, _ = optimize.load_foods(staple_cfg, staple_cache(), set())
     if req.low_fodmap:
         staples_ = fodmap.apply(staples_)
@@ -272,11 +294,13 @@ def build_plan(req):
     pool = catalog.available(excluded, liked_ids | core_ids, {f["name"] for f in cfg["foods"]} | set(req.rotate), staples_)
     if req.low_fodmap:
         pool = fodmap.apply(pool)
+    pool = [f for f in pool if aldi.type_of(f) not in hated]
     extra = catalog.shortlist(pool, targets)
     foods = liked + staples_ + extra
     for f in foods:
         if aldi.type_of(f) == "eggs":
             f["whole"] = True                # eggs come in whole eggs
+    labels.apply(foods)                  # Aldi label numbers where the product has them
     if req.low_cost:
         fallback = basket.median_per_gram()
         for f in foods:
@@ -286,10 +310,19 @@ def build_plan(req):
         alloc, totals, forced = solve_with_liked(foods, liked, targets, step)
         if avoided:
             forced = [f"{', '.join(avoided)} not used: on your avoid list." if not req.low_fodmap else f"{', '.join(avoided)} not used: on your avoid list or not rated low FODMAP."] + forced
+        if disliked_away:
+            forced = [f"{', '.join(disliked_away)} not used: on your dislike list."] + forced
         if not_aldi:
-            forced = [f"{', '.join(not_aldi)} not used: Aldi doesn't sell {'it' if len(not_aldi) == 1 else 'them'}."] + forced
+            forced = [f"{', '.join(not_aldi)} not used: no named Aldi product on file for {'it' if len(not_aldi) == 1 else 'them'}."] + forced
     used = [(f, float(a.sum())) for f, a in zip(foods, alloc) if a.sum() > 0]
     day = meals.build(foods, alloc)
+    by_name = {f["name"]: basket.product(f) for f in foods}
+    labelled = {f["name"] for f in foods if f.get("from_label")}
+    for m in day["meals"]:
+        for it in m["items"]:
+            row = by_name.get(it["name"])
+            it["product"] = row["title"] if row else None
+            it["from_label"] = it["name"] in labelled
     grocery = basket.build(foods, alloc, req.days)
     month = basket.build(foods, alloc, 30)
     grocery["month"] = {"total": month["total"], "per_day": round(month["total"] / 30, 2)}

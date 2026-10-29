@@ -11,6 +11,7 @@ from pathlib import Path
 
 import aldi
 import aminos
+import basket
 import contaminants
 import epicure
 import roles
@@ -59,7 +60,7 @@ def available(excluded_tags, skip_ids=(), skip_names=(), staples=()):
             continue
         out.append(dict(f))
     covered = {aldi.type_of(f) for f in staples}
-    return [f for f in aldi.select(out) if aldi.type_of(f) not in covered]
+    return [f for f in aldi.select(out) if aldi.type_of(f) not in covered and basket.product(f)]
 
 
 def _usefulness(f, targets):

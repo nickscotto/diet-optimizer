@@ -663,5 +663,40 @@
   "pack_g": 226.8,
   "mode": "pack",
   "date": "2026-10-26"
+ },
+ "salt": {
+  "title": "Stonemill Iodized Salt 26 oz",
+  "price": 0.89,
+  "pack_g": 737.0,
+  "mode": "pack",
+  "date": "2026-10-27"
+ },
+ "turkey breast": {
+  "title": "Butterball Boneless Turkey Breast Roast 48 oz",
+  "price": 14.29,
+  "pack_g": 1361.0,
+  "mode": "pack",
+  "date": "2026-10-27"
+ },
+ "swiss cheese": {
+  "title": "Happy Farms Swiss Cheese 8 oz",
+  "price": 1.95,
+  "pack_g": 226.8,
+  "mode": "pack",
+  "date": "2026-10-27"
+ },
+ "sunflower seeds": {
+  "title": "Southern Grove Unsalted Roasted Sunflower Kernels 16 oz",
+  "price": 2.85,
+  "pack_g": 453.6,
+  "mode": "pack",
+  "date": "2026-10-27"
+ },
+ "yellow squash": {
+  "title": "Freshire Farms Yellow Squash, per lb",
+  "price": 2.03,
+  "pack_g": 453.6,
+  "mode": "lb",
+  "date": "2026-10-27"
  }
 }

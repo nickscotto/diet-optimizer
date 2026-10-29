@@ -100,7 +100,7 @@ TYPES = [
     ("canned salmon", r"^salmon, pink", "pink salmon"),
     ("sardines", r"^sardines", "sardine"),
     # --- eggs and dairy
-    ("eggs", r"^egg, whole$|^eggs$", "egg"),
+    ("eggs", r"^egg, whole$|^eggs?$", "egg"),
     ("milk", r"^(nonfat |lowfat |reduced fat |whole )?milk\b(?!fish)", "milk"),
     ("soy milk", r"^soy ?milk|^soymilk, (original|nonfat|enhanced)", "soy"),
     ("cheddar", r"^cheddar cheese$", "cheddar"),

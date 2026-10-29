@@ -50,6 +50,8 @@ MAIN_PTS, VEG_PTS, BASE_PTS, STARCH_PTS = 2.0, 0.2, 0.2, 0.08   # penalty per gr
 KCAL_SHARE = (0.25, 0.40)
 KCAL_PTS, PROT_DEV_PTS = 0.08, 0.15
 MIP_GAP = 0.05
+HARD_MIN = {"sodium"}     # minimums the plan must meet, never traded off (iodized salt makes this always reachable)
+HARD_MARGIN = 1.02        # aimed 2% above the minimum so rounding to whole grams can't land under it
 DIVE_DROP, DIVE_LOCK = 0.02, 2   # fraction of use below which the dive drops a food; foods locked in per round
 POOL = 24                 # foods the exact solve searches (the rest are screened by the LP first)
 CLASH_BELOW = 0.075       # Epicure cosine under this = the two foods don't go together (oats ~ mushroom is -0.002;
@@ -128,6 +130,7 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
         rows.append(row); lo.append(low); hi.append(high)
 
     # --- daily nutrient tiers
+    hard_rows = []
     for r, (tier, j, k) in enumerate(tiers):
         t = targets[k]
         val, w = tier_value(t, tier), t.get("weight", 1.0)
@@ -139,7 +142,10 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
             else:
                 slack_cost[T + r] = (MAX_PENALTY_MULT if tier == "max" else OVER_PENALTY_MULT) * w * 100.0 / val
         else:
-            add(coefs + [(T + r, 1)], val, np.inf)
+            hard = tier == "min" and k in HARD_MIN
+            if hard:
+                hard_rows.append(T + r)
+            add(coefs + [(T + r, 1)], val * HARD_MARGIN if hard else val, np.inf)
             mult = {"goal": GOAL_PENALTY_MULT, "push": PUSH_PENALTY_MULT}.get(tier, 1.0)
             slack_cost[T + r] = mult * w * 100.0 / val
 
@@ -193,6 +199,7 @@ def _solve(foods, targets, step, required, max_foods, time_limit, extra, relax=F
         slack_cost[s(m, 6)] = slack_cost[s(m, 7)] = PROT_DEV_PTS
 
     lb, ub = np.zeros(n_vars), np.full(n_vars, np.inf)
+    ub[hard_rows] = 0                      # no slack: a hard minimum can't be traded for anything else
     for i, f in enumerate(foods):
         ub[W + i] = 1
         if f.get("always") or f.get("force") or f["name"] in required:

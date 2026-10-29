@@ -19,6 +19,11 @@ def prices():
     return json.loads(PATH.read_text(encoding="utf-8")) if PATH.exists() else {}
 
 
+def product(food):
+    """The Aldi price row (title, price...) for this food's type, or None when no named Aldi product is on file."""
+    return prices().get(aldi.type_of(food) or "")
+
+
 def per_gram(food):
     """Shelf price per gram of this food's Aldi type, or None when there is no price on file."""
     row = prices().get(aldi.type_of(food) or food["name"].lower())

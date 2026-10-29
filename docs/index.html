@@ -202,6 +202,16 @@ footer a { color: inherit; }
         <div class="hint">The plan leans toward these and fills nutrient gaps with staples (eggs, salmon, oats, beans, vegetables, fruit…).</div>
       </div>
 
+      <div class="panel">
+        <h2>Foods you dislike</h2>
+        <div class="search">
+          <input id="dq" type="search" placeholder="Search USDA foods, e.g. mushrooms, tuna" aria-label="Search foods you dislike">
+          <div class="results" id="dresults" role="listbox"></div>
+        </div>
+        <div class="chips liked" id="disliked"></div>
+        <div class="hint">These never appear in your plan. Picking one removes every Aldi food of that kind.</div>
+      </div>
+
       <button class="go" id="go" type="submit">Build my day</button>
     </form>
 
@@ -231,7 +241,7 @@ const n0 = x => Math.round(x).toLocaleString();
 
 const state = Object.assign({
   sex: "male", age: "", ft: "", inch: "", weight: "", waist: "", waistkind: "pants", activity: "moderate",
-  goal: "22", deficit: 22, diet: "omnivore", avoid: [], liked: [], fodmap: false, lowcost: false,
+  goal: "22", deficit: 22, diet: "omnivore", avoid: [], liked: [], disliked: [], fodmap: false, lowcost: false,
 }, store.get("planner", {}));
 { const lc = document.getElementById("lowcost"); lc.checked = !!state.lowcost; lc.addEventListener("change", () => { state.lowcost = lc.checked; save(); }); }
 { const fm = document.getElementById("fodmap"); fm.checked = !!state.fodmap; fm.addEventListener("change", () => { state.fodmap = fm.checked; save(); }); }
@@ -279,42 +289,56 @@ function showDeficit() {
   $("#deficitOut").textContent = d > 0 ? `${d}% below maintenance` : d < 0 ? `${-d}% above maintenance` : "at maintenance";
 }
 
-function renderLiked() {
-  $("#liked").innerHTML = state.liked.map((f, i) =>
+function renderList(key) {
+  const el = $("#" + key);
+  el.innerHTML = state[key].map((f, i) =>
     `<span class="chip">${esc(f.name)}<button type="button" class="x" data-i="${i}" aria-label="Remove ${esc(f.name)}">×</button></span>`).join("");
-  document.querySelectorAll("#liked .x").forEach(b => b.addEventListener("click", () => {
-    state.liked.splice(+b.dataset.i, 1); save(); renderLiked();
+  el.querySelectorAll(".x").forEach(b => b.addEventListener("click", () => {
+    state[key].splice(+b.dataset.i, 1); save(); renderList(key);
   }));
 }
+const renderLiked = () => { renderList("liked"); renderList("disliked"); };
 const shortName = d => d.split(",").slice(0, 2).map(s => s.trim()).join(", ").slice(0, 60);
 
-let timer, seq = 0;
-$("#q").addEventListener("input", e => {
-  clearTimeout(timer);
-  const q = e.target.value.trim();
-  if (q.length < 2) { $("#results").classList.remove("open"); return; }
-  timer = setTimeout(async () => {
-    const my = ++seq;
-    try {
-      const r = await fetch((window.API_BASE || "") + "/api/search?q=" + encodeURIComponent(q));
-      const hits = r.ok ? await r.json() : [];
-      if (my !== seq) return;
-      const box = $("#results");
-      box.innerHTML = hits.length ? hits.map(h =>
-        `<button type="button" data-id="${h.fdc_id}" data-d="${esc(h.description)}">${esc(h.description)} <small>${esc(h.data_type)}</small></button>`).join("")
-        : `<button type="button" disabled>No matches. Try simpler words.</button>`;
-      box.classList.add("open");
-      box.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => {
-        const id = +b.dataset.id;
-        if (!state.liked.some(f => f.fdc_id === id)) state.liked.push({ fdc_id: id, name: shortName(b.dataset.d), description: b.dataset.d });
-        save(); renderLiked(); box.classList.remove("open"); $("#q").value = ""; $("#q").focus();
-      }));
-    } catch { /* network hiccup: leave results closed */ }
-  }, 300);
-});
+function foodSearch(inputId, resultsId, key, withTypes) {     // type, pick a USDA food, it joins state[key]
+  let timer, seq = 0;
+  const input = $("#" + inputId), box = $("#" + resultsId);
+  input.addEventListener("input", e => {
+    clearTimeout(timer);
+    const q = e.target.value.trim();
+    if (q.length < 2) { box.classList.remove("open"); return; }
+    timer = setTimeout(async () => {
+      const my = ++seq;
+      try {
+        const r = await fetch((window.API_BASE || "") + "/api/search?q=" + encodeURIComponent(q));
+        const hits = r.ok ? await r.json() : [];
+        let types = [];
+        if (withTypes) { const t = await fetch((window.API_BASE || "") + "/api/types?q=" + encodeURIComponent(q)); types = t.ok ? await t.json() : []; }
+        if (my !== seq) return;
+        const typeBtns = types.map(t => `<button type="button" data-type="${esc(t)}"><b>${esc(t)}</b> <small>any kind</small></button>`).join("");
+        box.innerHTML = typeBtns + (hits.length ? hits.map(h =>
+          `<button type="button" data-id="${h.fdc_id}" data-d="${esc(h.description)}">${esc(h.description)} <small>${esc(h.data_type)}</small></button>`).join("")
+          : types.length ? "" : `<button type="button" disabled>No matches. Try simpler words.</button>`);
+        box.classList.add("open");
+        box.querySelectorAll("button[data-type]").forEach(b => b.addEventListener("click", () => {
+          const t = b.dataset.type;
+          if (!state[key].some(f => f.type === t)) state[key].push({ type: t, name: t + " (any kind)" });
+          save(); renderList(key); box.classList.remove("open"); input.value = ""; input.focus();
+        }));
+        box.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => {
+          const id = +b.dataset.id;
+          if (!state[key].some(f => f.fdc_id === id)) state[key].push({ fdc_id: id, name: shortName(b.dataset.d), description: b.dataset.d });
+          save(); renderList(key); box.classList.remove("open"); input.value = ""; input.focus();
+        }));
+      } catch { /* network hiccup: leave results closed */ }
+    }, 300);
+  });
+}
+foodSearch("q", "results", "liked");
+foodSearch("dq", "dresults", "disliked", true);
 let rotate = [], planNo = 0, wantDifferent = false;   // foods of the plan on screen, sent when "Different plan" is pressed
 
-document.addEventListener("click", e => { if (!e.target.closest(".search")) $("#results").classList.remove("open"); });
+document.addEventListener("click", e => { if (!e.target.closest(".search")) document.querySelectorAll(".results").forEach(r => r.classList.remove("open")); });
 
 $("#form").addEventListener("submit", async e => {
   e.preventDefault();
@@ -326,7 +350,7 @@ $("#form").addEventListener("submit", async e => {
       sex: state.sex, age: +state.age, height_in: (+state.ft) * 12 + (+state.inch || 0), weight_lb: +state.weight,
       waist_in: !womensSize() && state.waist ? +state.waist : null, pant_size: womensSize() && state.pant !== undefined && state.pant !== "" ? +state.pant : null, waist_kind: state.waistkind, activity: state.activity, deficit_pct: +state.deficit,
     },
-    diet: state.diet, avoid: state.avoid, low_fodmap: !!state.fodmap, low_cost: !!state.lowcost, liked: state.liked.map(f => ({ fdc_id: f.fdc_id, name: f.name })),
+    diet: state.diet, avoid: state.avoid, low_fodmap: !!state.fodmap, low_cost: !!state.lowcost, liked: state.liked.map(f => ({ fdc_id: f.fdc_id, name: f.name })), disliked: state.disliked.map(f => f.type ? { type: f.type } : { fdc_id: f.fdc_id }),
     rotate: again ? rotate : [],
     days: Math.min(14, Math.max(1, Math.round(+$("#days").value) || 4)),
   };
@@ -384,7 +408,10 @@ function render(d) {
       `<tr><td>${esc(i.name)}</td><td>${esc(i.product)}</td><td>${esc(i.buy)}</td><td>$${i.cost.toFixed(2)}</td><td>${i.leftover_g ? n0(i.leftover_g) + " g" : ""}</td></tr>`).join("")}
       <tr><td colspan="3"><b>Total</b></td><td><b>$${b.total.toFixed(2)}</b></td><td></td></tr></table></div>
     <p class="monthly"><b>About $${n0(b.month.total)} a month</b> (30 days, $${b.month.per_day.toFixed(2)} a day), counting whole packages bought for the full month.</p>
+    <p><button type="button" id="copylist">Copy shopping list</button> <button type="button" id="savelist">Download .txt</button> <span class="note" id="copymsg"></span></p>
     <p class="note">Whole packages at zip 32940 prices from ${esc(b.priced_on || "")}. Prices change and sizes are rounded up, so treat the total as an estimate.${b.unpriced.length ? " No price on file for: " + esc(b.unpriced.join(", ")) + "." : ""}</p></details>` : "";
+  const NL = String.fromCharCode(10);
+  const listText = b ? b.items.map(i => `${/pack/.test(i.buy) ? parseInt(i.buy) : i.buy} ${i.product}`).join(NL) : "";
   const gaps = d.gaps.length ? `<details open><summary>Data gaps</summary><ul class="note">${d.gaps.map(g => `<li>${esc(g)}</li>`).join("")}</ul></details>` : "";
   const again = `<div class="again"><span>Plan ${planNo}. Eating one plan for 3–4 days keeps calories easy to control.</span>
     <button type="button" id="different">Different plan</button></div>`;
@@ -394,6 +421,18 @@ function render(d) {
       <details><summary>All nutrients</summary><div class="tablewrap"><table><tr><th></th><th>Amount</th><th>Min</th><th>Goal</th><th>Max</th></tr>${rows}</table></div>
         <p class="note">Min is the RDA, goal is a higher target for people who train, max stays under the safe upper limit. Iodine isn't in USDA data; iodized salt, eggs and dairy cover it.</p></details>
       ${gaps}</section>`;
+  const copy = $("#copylist"), save = $("#savelist"), msg = $("#copymsg");
+  if (copy) {
+    copy.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(listText); msg.textContent = "Copied. Paste it into your store's shopping list."; }
+      catch (_) { msg.textContent = "Couldn't copy. Use Download .txt instead."; }
+    });
+    save.addEventListener("click", () => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([listText + NL], { type: "text/plain" }));
+      a.download = "aldi-shopping-list.txt"; a.click(); URL.revokeObjectURL(a.href);
+    });
+  }
 }
 
 bindInputs(); syncWaist(); renderLiked();
